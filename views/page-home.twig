@@ -1,0 +1,36 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <section 
+    {% if post.meta('main_background_image') -%}
+    style="background-image: url('{{ get_image(post.meta('main_background_image')).src }}');"
+    {% endif %}
+    class="lfl-hp-hero max-w-screen-2xl py-6 mx-auto px-fluid-base">
+    <div class="lfl-hero max-w-md ">
+      <h2 class="text-lg">Solving modern day problems with holistic solutions</h2>
+      <p>At Little Fish Labs, we cultivate functional food brands designed to bolster health and well-being. We bring together science and nature to create products that deliver efficiency and reassurance.</p>
+      <a href="" class="lfl-link-button  max-w-40">Learn more <span class="sr-only">about Little Fish Labs</span></a>
+    </div>
+  </section>
+
+  <section class="max-w-screen-2xl py-6 mx-auto px-fluid-base">
+    <div class="w-40 h-40 rounded-full overflow-hidden">
+      <img class="w-full h-auto block" src="https://picsum.photos/200/300" alt="Picture of founder Jade"/>
+    </div>
+  </section>
+
+  <section class="lfl-wwd-container max-w-screen-2xl py-6 mx-auto px-fluid-base">
+    {% for item in post.meta('what_we_do_blocks') %}
+      <div class="lfl-wwd">
+        <div class="lfl-wwd__image max-w-[100px] md:max-w-[100px]">
+          <img src="{{ get_image(item.icon).src }}" aria-hidden="true" />
+        </div>
+        <h3 class="lfl-wwd__title">{{ item.title }}</h3>
+        <p class="lfl-wwd__detail">{{ item.detail }}</p>
+        <div class="lfl-wwd__link">
+          <a href="" class="lfl-link-button  max-w-40">Learn more <span class="sr-only">about {{ item.title }}</span></a>
+        </div>
+      </div>
+    {% endfor %}
+  </section>
+{% endblock %}
