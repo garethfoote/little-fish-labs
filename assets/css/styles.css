@@ -1,4 +1,33 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
-@import "theme";
 @import "tailwindcss/utilities"; 
+
+@import "fonts";
+
+@import "base";
+@import "components";
+@import "utilities";
+
+nav li a {
+  display: block;
+  width: 100px;
+  padding: .5em .1em;
+  text-align: center;
+}
+
+.nav-modal-outer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: stretch;
+  z-index: -1;
+}
+
+.nav-modal-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow-y: scroll;
+}
+  

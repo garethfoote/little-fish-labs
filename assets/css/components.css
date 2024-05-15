@@ -1,0 +1,53 @@
+@layer components {
+ 
+  /*
+   * Homepage hero
+   */
+  .lfl-hp-hero {
+    @apply h-[60vh];
+    @apply bg-bottom bg-no-repeat;
+  }
+
+  /*
+   * What We Do container and blocks
+   */
+  @media screen(sm) {
+    .lfl-wwd-container {
+      @apply flex justify-around gap-6;
+    }
+    .lfl-wwd-container .lfl-wwd {
+      @apply flex-auto;
+      @apply min-w-80;
+      @apply max-w-[22%];
+    }
+  }
+
+  .lfl-wwd {
+    @apply flex flex-col;
+    border-radius: theme('borderRadius.lg');
+    padding: theme('spacing.6');
+    box-shadow: theme('boxShadow.xl');
+  }
+  
+  .lfl-wwd__image {
+    @apply mb-4;
+  }
+
+  .lfl-wwd__title {
+    @apply mb-2;
+    @apply font-sans text-lg;
+  }
+
+  .lfl-wwd__detail {
+    @apply mb-auto pb-6;
+  }
+
+  /*
+   * Link button
+   */
+  .lfl-link-button {
+    @apply text-center;
+    @apply block py-1 px-4;
+    @apply border-2 border-blue rounded-full;
+  }
+}

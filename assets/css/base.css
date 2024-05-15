@@ -1,0 +1,12 @@
+@layer base {
+  a, p {
+    @apply text-black text-md;
+  }
+
+  h1 {
+    @apply text-2xl;
+  }
+  h2 {
+    @apply text-xl;
+  }
+}
