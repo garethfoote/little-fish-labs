@@ -17,9 +17,22 @@ class StarterSite extends Site {
 
 		add_action('wp_enqueue_scripts', array( $this, 'load_scripts' ) );
 
+		add_action('admin_head', array( $this,'remove_content_editor'));
+
 		parent::__construct();
 	}
-	
+
+	/**
+	 * Remove the content editor from pages as all content is handled through Panels
+	 */
+	public function remove_content_editor()
+	{
+		if((int) get_option('page_on_front') == get_the_ID())
+		{
+			remove_post_type_support('page', 'editor');
+		}
+	}
+		
 	public function load_scripts() {
 		$manifestPath = get_theme_file_path('public/dist/manifest.json');
 	   
