@@ -34,7 +34,7 @@ class StarterSite extends Site {
 	}
 		
 	public function load_scripts() {
-		$manifestPath = get_theme_file_path('public/dist/manifest.json');
+		$manifestPath = get_theme_file_path('public/manifest.json');
 	   
 		if (is_array(wp_remote_get('http://localhost:5173/'))) {
 	   
@@ -48,8 +48,8 @@ class StarterSite extends Site {
 		} elseif (file_exists($manifestPath)) {
 		
 		 $manifest = json_decode(file_get_contents($manifestPath), true);
-		 wp_enqueue_script('main-js', get_theme_file_uri('public/dist/' . $manifest['assets/js/main.js']['file']), ['jquery'], null, true);
-		 wp_enqueue_style('style-css', get_theme_file_uri('public/dist/' . $manifest['assets/css/styles.css']['file']), [], null);
+		 wp_enqueue_script('main-js', get_theme_file_uri('public/' . $manifest['assets/js/main.js']['file']), ['jquery'], null, true);
+		 wp_enqueue_style('style-css', get_theme_file_uri('public/' . $manifest['assets/css/styles.css']['file']), [], null);
 	   
 		}
 	}
