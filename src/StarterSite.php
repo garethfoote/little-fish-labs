@@ -17,9 +17,9 @@ class StarterSite extends Site {
 
 		add_action('wp_enqueue_scripts', array( $this, 'load_scripts' ) );
 
-		add_action('admin_head', array( $this,'lfl_remove_admin_items'));
+		add_action( 'admin_head', array( $this,'lfl_remove_admin_items'));
     add_action( 'admin_head', array( $this, 'lfl_remove_comments') );
-
+    
     add_filter( 'custom_menu_order', array( $this,'lfl_custom_menu_order') );
     add_filter( 'menu_order', array( $this,'lfl_custom_menu_order') );
 
@@ -40,23 +40,24 @@ class StarterSite extends Site {
 	}
 
   public function lfl_custom_menu_order( $menu_ord ) {
-      if ( !$menu_ord ) return true;
+    if ( !$menu_ord ) return true;
 
-      return array(
-          'index.php', // Dashboard
-          'separator1', // First separator
-          'edit.php', // Posts
-          'edit.php?post_type=page', // Pages
-          'edit.php?post_type=lfl_product', // Products
-          'upload.php', // Media
-          'separator2', // Second separator
-          'themes.php', // Appearance
-          'plugins.php', // Plugins
-          'users.php', // Users
-          'tools.php', // Tools
-          'options-general.php', // Settings
-          'separator-last', // Last separator
-      );
+    return array(
+      'index.php', // Dashboard
+      'separator1', // First separator
+      'edit.php', // Posts
+      'edit.php?post_type=page', // Pages
+      'edit.php?post_type=lfl_brands', // Brands
+      'edit.php?post_type=lfl_team', // Team
+      'upload.php', // Media
+      'separator2', // Second separator
+      'themes.php', // Appearance
+      'plugins.php', // Plugins
+      'users.php', // Users
+      'tools.php', // Tools
+      'options-general.php', // Settings
+      'separator-last', // Last separator
+    );
   }
 
 	public function load_scripts() {
@@ -85,16 +86,41 @@ class StarterSite extends Site {
 	 */
 	public function register_post_types() {
 
-		register_post_type('lfl_product',
+		register_post_type('lfl_brands',
 			array(
 				'labels'      => array(
-					'name'          => __('Products', 'textdomain'),
-					'singular_name' => __('Product', 'textdomain'),
+					'name'          => __('Brands', 'textdomain'),
+					'singular_name' => __('Brand', 'textdomain'),
+					'edit_item' => 'Edit Brand',
+					'view_item' => 'View Brand',
+					'view_items' => 'View Brands',
+					'add_new_item' => 'Add New Brand',
+					'add_new' => 'Add New Brand',
+					'new_item' => 'New Brand',
 				),
-        'public'      => true,
-        'has_archive' => false,
-        'menu_icon' => 'dashicons-carrot'
-        
+				'public'      => true,
+				'has_archive' => false,
+				'menu_icon' => 'dashicons-carrot',
+				'supports' => array('title')
+			)
+		);
+
+		register_post_type('lfl_team',
+			array(
+				'labels'      => array(
+					'name'          => __('Team', 'textdomain'),
+					'singular_name' => __('Team Member', 'textdomain'),
+					'edit_item' => 'Edit Member',
+					'view_item' => 'View Member',
+					'view_items' => 'View Team',
+					'add_new_item' => 'Add New Member',
+					'add_new' => 'Add New Member',
+					'new_item' => 'New Member',
+				),
+				'public'      => true,
+				'has_archive' => false,
+				'menu_icon' => 'dashicons-smiley',
+				'supports' => array('title')
 			)
 		);
 		
