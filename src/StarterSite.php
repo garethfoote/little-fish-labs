@@ -17,7 +17,11 @@ class StarterSite extends Site {
 
 		add_action('wp_enqueue_scripts', array( $this, 'load_scripts' ) );
 
-		add_action('admin_head', array( $this,'remove_content_editor'));
+		add_action('admin_head', array( $this,'lfl_remove_admin_items'));
+    add_action( 'admin_head', array( $this, 'lfl_remove_comments') );
+
+    add_filter( 'custom_menu_order', array( $this,'lfl_custom_menu_order') );
+    add_filter( 'menu_order', array( $this,'lfl_custom_menu_order') );
 
 		parent::__construct();
 	}
@@ -25,14 +29,36 @@ class StarterSite extends Site {
 	/**
 	 * Remove the content editor from pages as all content is handled through Panels
 	 */
-	public function remove_content_editor()
+	public function lfl_remove_admin_items()
 	{
-		if((int) get_option('page_on_front') == get_the_ID())
-		{
+		if((int) get_option('page_on_front') == get_the_ID()) {
 			remove_post_type_support('page', 'editor');
 		}
+
+    remove_menu_page('edit-comments.php');
+    remove_menu_page('edit.php');
 	}
-		
+
+  public function lfl_custom_menu_order( $menu_ord ) {
+      if ( !$menu_ord ) return true;
+
+      return array(
+          'index.php', // Dashboard
+          'separator1', // First separator
+          'edit.php', // Posts
+          'edit.php?post_type=page', // Pages
+          'edit.php?post_type=lfl_product', // Products
+          'upload.php', // Media
+          'separator2', // Second separator
+          'themes.php', // Appearance
+          'plugins.php', // Plugins
+          'users.php', // Users
+          'tools.php', // Tools
+          'options-general.php', // Settings
+          'separator-last', // Last separator
+      );
+  }
+
 	public function load_scripts() {
 		$manifestPath = get_theme_file_path('public/manifest.json');
 	   
@@ -59,6 +85,19 @@ class StarterSite extends Site {
 	 */
 	public function register_post_types() {
 
+		register_post_type('lfl_product',
+			array(
+				'labels'      => array(
+					'name'          => __('Products', 'textdomain'),
+					'singular_name' => __('Product', 'textdomain'),
+				),
+        'public'      => true,
+        'has_archive' => false,
+        'menu_icon' => 'dashicons-carrot'
+        
+			)
+		);
+		
 	}
 
 	/**
