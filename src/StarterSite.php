@@ -10,6 +10,7 @@ class StarterSite extends Site {
 		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'init', array( $this, 'lfl_remove_jquery' ) );
 
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
@@ -18,20 +19,30 @@ class StarterSite extends Site {
 		add_action('wp_enqueue_scripts', array( $this, 'load_scripts' ) );
 
 		add_action( 'admin_head', array( $this,'lfl_remove_admin_items'));
-    add_action( 'admin_head', array( $this, 'lfl_remove_comments') );
-    
-    add_filter( 'custom_menu_order', array( $this,'lfl_custom_menu_order') );
-    add_filter( 'menu_order', array( $this,'lfl_custom_menu_order') );
+		add_action( 'admin_head', array( $this, 'lfl_remove_comments') );
+		
+		add_filter( 'custom_menu_order', array( $this,'lfl_custom_menu_order') );
+		add_filter( 'menu_order', array( $this,'lfl_custom_menu_order') );
 
-    add_filter( 'acf/get_valid_field', array( $this,'change_post_content_type'));
+		add_filter( 'acf/get_valid_field', array( $this,'lfl_change_post_content_type'));
 
 		parent::__construct();
 	}
 
 	/**
+	 * Remove jQuery
+	 */
+  public function lfl_remove_jquery() {
+    if (!is_admin()) {
+      wp_deregister_script('jquery');
+      wp_register_script('jquery', false);
+    }
+  }
+
+	/**
 	 * Remove 'Add Media' from ACF wysiwyg field
 	 */
-  public function change_post_content_type( $field ) { 
+  public function lfl_change_post_content_type( $field ) { 
     if($field['type'] == 'wysiwyg') {
       $field['tabs'] = 'visual';
       $field['toolbar'] = 'basic';
@@ -163,8 +174,6 @@ class StarterSite extends Site {
 	}
 
 	public function theme_supports() {
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
 
 		/*
 		 * Let WordPress manage the document title.
