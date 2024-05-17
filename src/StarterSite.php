@@ -49,14 +49,14 @@ class StarterSite extends Site {
       'edit.php?post_type=page', // Pages
       'edit.php?post_type=lfl_brands', // Brands
       'edit.php?post_type=lfl_team', // Team
-      'upload.php', // Media
       'separator2', // Second separator
+      'upload.php', // Media
+      'separator-last', // Last separator
       'themes.php', // Appearance
       'plugins.php', // Plugins
       'users.php', // Users
       'tools.php', // Tools
       'options-general.php', // Settings
-      'separator-last', // Last separator
     );
   }
 
