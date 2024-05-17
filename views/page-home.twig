@@ -5,9 +5,9 @@
     {% if post.meta('main_background_image') -%} 
       style="background-image: url('{{ get_image(post.meta('main_background_image')).src }}');" 
     {% else %} 
-      style="background-image: url('{{ theme.link }}/assets/img/hp-hero-bg.png');" 
+      style="background-image: url('{{ theme.link }}/assets/img/hp-hero-bg.svg');" 
     {% endif %} 
-    class="lfl-hp-hero lfl-section min-h-[700px]">
+    class="lfl-hp-hero lfl-section">
       <div class="lfl-hero-intro max-w-md relative left-[3%] top-12 text-white">
         <h2 class="pb-6">Solving modern day problems with holistic solutions</h2>
         {# <p>At Little Fish Labs, we cultivate functional food brands designed to bolster health and well-being. We bring together science and nature to create products that deliver efficiency and reassurance.</p> #}
