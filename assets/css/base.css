@@ -4,9 +4,12 @@
   }
 
   h1 {
-    @apply text-2xl;
+    @apply text-2xl font-normal;
   }
   h2 {
-    @apply text-xl;
+    @apply text-2xl font-normal;
+  }
+  .eyebrow {
+    @apply text-base mb-4 uppercase text-gray-700;
   }
 }

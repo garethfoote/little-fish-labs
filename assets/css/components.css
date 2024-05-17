@@ -1,11 +1,42 @@
 @layer components {
- 
   /*
    * Homepage hero
    */
   .lfl-hp-hero {
     @apply h-[60vh];
     @apply bg-bottom bg-no-repeat;
+    /* background-size: clamp(90%, 80%, 105%) auto; */
+    background-size: clamp(100%, 100% + 2vw, 120%) auto;
+    /* background-size: 100% + 2vw auto; */
+  }
+
+  /*
+   * Homepage Logo
+   */
+  .lfl-logo {
+    @apply w-[340px] relative left-[-5px] md:left-[-24px];
+  }
+
+  /*
+   * Homepage Quote Block
+   */
+  .lfl-hp-quote {
+    @apply h-full;
+    @apply text-center sm:text-left;
+    @apply sm:flex justify-center items-center gap-12;
+  }
+  .lfl-hp-quote__image {
+    @apply flex flex-col justify-center;
+    @apply mb-6 sm:mb-0;
+    @apply mx-auto sm:mx-0;
+    @apply w-40 h-40 rounded-full overflow-hidden;
+  }
+
+  .lfl-hp-quote__quote {
+    @apply text-lg sm:text-xl text-blue;
+  }
+  .lfl-hp-quote__name {
+    @apply text-base text-blue-dark;
   }
 
   /*
@@ -13,22 +44,14 @@
    */
   @media screen(sm) {
     .lfl-wwd-container {
-      @apply flex justify-around gap-6;
-    }
-    .lfl-wwd-container .lfl-wwd {
-      @apply flex-auto;
-      @apply min-w-80;
-      @apply max-w-[22%];
+      @apply grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-6 xl:gap-12;
     }
   }
 
   .lfl-wwd {
     @apply flex flex-col;
-    border-radius: theme('borderRadius.lg');
-    padding: theme('spacing.6');
-    box-shadow: theme('boxShadow.xl');
   }
-  
+
   .lfl-wwd__image {
     @apply mb-4;
   }
@@ -46,8 +69,13 @@
    * Link button
    */
   .lfl-link-button {
+    /* 180x35 */
     @apply text-center;
-    @apply block py-1 px-4;
-    @apply border-2 border-blue rounded-full;
+    @apply inline-block py-1 px-12;
+    @apply border border-blue rounded-full;
+  }
+  .lfl-link-button--light {
+    @apply text-center text-white;
+    @apply border-white;
   }
 }

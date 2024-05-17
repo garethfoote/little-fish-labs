@@ -3,5 +3,16 @@
     padding-left: clamp(2rem,1.36rem + 1vw,3rem);
     padding-right: clamp(2rem,1.36rem + 1vw,3rem);
   }
+  .bottom-border {
+    @apply border-b border-gray-400 pb-6;
+  }
+  
+  .bottom-border--valign {
+    @apply pt-6;
+  }
+
+  .lfl-section {
+    @apply max-w-screen-2xl pb-6 mx-auto px-fluid-base;
+  }
 }
   
