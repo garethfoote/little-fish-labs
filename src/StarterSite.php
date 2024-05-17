@@ -23,8 +23,22 @@ class StarterSite extends Site {
     add_filter( 'custom_menu_order', array( $this,'lfl_custom_menu_order') );
     add_filter( 'menu_order', array( $this,'lfl_custom_menu_order') );
 
+    add_filter( 'acf/get_valid_field', array( $this,'change_post_content_type'));
+
 		parent::__construct();
 	}
+
+	/**
+	 * Remove 'Add Media' from ACF wysiwyg field
+	 */
+  public function change_post_content_type( $field ) { 
+    if($field['type'] == 'wysiwyg') {
+      $field['tabs'] = 'visual';
+      $field['toolbar'] = 'basic';
+      $field['media_upload'] = 0;
+    }
+    return $field;
+  }
 
 	/**
 	 * Remove the content editor from pages as all content is handled through Panels
