@@ -1,13 +1,18 @@
 @layer base {
   a, p {
-    @apply text-black text-md;
+    @apply text-black text-md mb-6;
   }
 
-  h1 {
+  h1, .lfl-heading-l {
     @apply text-2xl font-normal;
   }
-  h2 {
+
+  h2, .lfl-heading-m {
     @apply font-extended text-3xl font-light;
+  }
+
+  h3, .lfl-heading-s {
+    @apply font-extended font-light text-lg;
   }
   .eyebrow {
     @apply font-extended font-normal text-base mb-4 uppercase text-gray-700;

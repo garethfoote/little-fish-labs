@@ -7,53 +7,65 @@
     {% else %} 
       style="background-image: url('{{ theme.link }}/assets/img/hp-hero-bg.svg');" 
     {% endif %} 
-    class="lfl-hp-hero lfl-section">
+    class="lfl-hp-hero lfl-section pb-6">
       <div class="lfl-hero-intro max-w-md relative left-[3%] top-12 text-white">
-        <h2 class="pb-12">Solving modern day problems with holistic solutions</h2>
+        <div class="lfl-heading-m pb-12">Solving modern day problems with holistic solutions</div>
         <a href="" class="lfl-link-button lfl-link-button--light">Learn more
           <span class="sr-only">about Little Fish Labs</span>
         </a>
 		</div>
 	</section>
 
-	<section class="bg-white">
+	<section class="bg-white pb-12">
 	  <div class="lfl-section md:h-72">
-		<div class="lfl-hp-quote bottom-border bottom-border--valign">
-			<div class="lfl-hp-quote__image">
-				<img class="w-full h-auto block" src="{{get_image(post.meta('quote_block').image).src}}" alt="Picture of founder Jade"/>
-			</div>
-			<div>
-				<div class="lfl-hp-quote__quote">
-					&ldquo;{{post.meta('quote_block').quote}}&rdquo;
-				</div>
-				<div class="lfl-hp-quote__name">
-					{{post.meta('quote_block').name}}
-				</div>
-			</div>
-		</div>
+      <div class="lfl-hp-quote bottom-border">
+        <div class="lfl-hp-quote__image">
+          <img class="w-full h-auto block" src="{{get_image(post.meta('quote_block').image).src}}" alt="Picture of founder Jade"/>
+        </div>
+        <div>
+          <div class="lfl-hp-quote__quote">
+            &ldquo;{{post.meta('quote_block').quote}}&rdquo;
+          </div>
+          <div class="lfl-hp-quote__name">
+            {{post.meta('quote_block').name}}
+          </div>
+        </div>
+      </div>
 		</div>
 	</section>
 
-	<section class="bg-white">
-	  <div class="lfl-section pt-6">
-      <h2 class="eyebrow pb-6">What we do</h2>
-      <div class="lfl-wwd-container">
-        {% for item in post.meta('what_we_do_blocks') %}
-          <div class="lfl-wwd">
-            <div class="lfl-wwd__image">
-              <img class="object-fill max-w-[100px] max-h-[100px]" src="{{ get_image(item.icon).src }}" aria-hidden="true"/>
-            </div>
-            <h3 class="lfl-wwd__title">{{ item.title }}</h3>
-            <p class="lfl-wwd__detail">{{ item.detail }}</p>
-            <div class="lfl-wwd__link">
-              <a href="" class="lfl-link-button">Learn more
-                <span class="sr-only">about
-                  {{ item.title }}</span>
-              </a>
-            </div>
-          </div>
-        {% endfor %}
+	<section class="bg-white pb-12">
+	  <div class="lfl-section">
+      <div class="bottom-border pb-12">
+        <h2 class="eyebrow pb-6">What we do</h2>
+        <div class="lfl-wwd-container">
+          {% for item in post.meta('what_we_do_blocks') %}
+            <article class="lfl-wwd">
+              <div class="lfl-wwd__image">
+                <img class="object-fill max-w-[100px] max-h-[100px]" src="{{ get_image(item.icon).src }}" aria-hidden="true"/>
+              </div>
+              <h3 class="lfl-wwd__title">{{ item.title }}</h3>
+              <p class="lfl-wwd__detail">{{ item.detail }}</p>
+              <div class="lfl-wwd__link">
+                <a href="" class="lfl-link-button">Learn more
+                  <span class="sr-only">about
+                    {{ item.title }}</span>
+                </a>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
       </div>
     </div>
 	</section>
+
+  <section class="bg-white">
+	  <div class="lfl-section">
+      <div class="bottom-border pb-12">
+        <h2 class="eyebrow mb-0">Our Brands</h2>
+        <p class="lfl-heading-s text-blue-700">Lorem ipsom dolor sit amet</p>
+        <p class="max-w-prose">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eleifend leo ac hendrerit posuere. Praesent sed placerat nisi.</p>
+      </div>
+    </div>
+  </section>
 {% endblock %}
