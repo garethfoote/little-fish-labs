@@ -7,9 +7,13 @@
     @apply text-2xl font-normal;
   }
   h2 {
-    @apply text-2xl font-normal;
+    @apply font-extended text-3xl font-light;
   }
   .eyebrow {
-    @apply text-base mb-4 uppercase text-gray-700;
+    @apply font-extended font-normal text-base mb-4 uppercase text-gray-700;
+  }
+
+  a {
+    @apply font-extended font-light text-white;
   }
 }

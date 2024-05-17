@@ -5,7 +5,8 @@
   .lfl-hp-hero {
     @apply h-[60vh];
     @apply bg-no-repeat;
-    background-size: clamp(100%, 100% + 2vw, 120%) auto;
+    background-size: clamp(100%, 110% + 2vw, 120%) auto;
+    background-position-x: center;
     background-position-y: calc(100% + 2px);
     min-height: clamp(400px, 100svh - 140px, 400px);
   }
@@ -28,9 +29,10 @@
    */
   .lfl-hp-quote {
     @apply h-full;
-    @apply text-center sm:text-left;
+    @apply font-extended font-light text-center text-blue-600 sm:text-left;
     @apply sm:flex justify-center items-center gap-12;
   }
+
   .lfl-hp-quote__image {
     @apply flex flex-col justify-center;
     @apply mb-6 sm:mb-0;
@@ -39,10 +41,10 @@
   }
 
   .lfl-hp-quote__quote {
-    @apply text-lg sm:text-xl text-blue;
+    @apply text-lg sm:text-xl md:text-2xl text-blue;
   }
   .lfl-hp-quote__name {
-    @apply text-base text-blue-dark;
+    @apply text-md text-blue-700;
   }
 
   /*
@@ -64,24 +66,33 @@
 
   .lfl-wwd__title {
     @apply mb-2;
-    @apply font-sans text-lg text-blue-dark;
+    @apply font-extended font-light text-lg text-blue-700;
   }
 
   .lfl-wwd__detail {
-    @apply mb-auto pb-6;
+    @apply font-sans font-light mb-auto pb-6;
   }
 
   /*
    * Link button
    */
   .lfl-link-button {
-    /* 180x35 */
-    @apply text-center;
+    @apply text-center text-blue-700;
     @apply inline-block py-1 px-12;
     @apply border border-blue rounded-full;
   }
+  .lfl-link-button:hover {
+    @apply bg-blue text-white;
+  } 
+
   .lfl-link-button--light {
     @apply text-center text-white;
     @apply border-white;
   }
+
+  .lfl-link-button--light:hover {
+    @apply bg-white text-blue-700;
+    @apply relative;
+  }
+
 }

@@ -1,7 +1,7 @@
 @layer utilities {
   .px-fluid-base {
-    padding-left: clamp(2rem,1.36rem + 1vw,3rem);
-    padding-right: clamp(2rem,1.36rem + 1vw,3rem);
+    padding-left: clamp(3rem,1.36rem + 1vw,3rem);
+    padding-right: clamp(3rem,1.36rem + 1vw,3rem);
   }
   .bottom-border {
     @apply border-b border-gray-400 pb-6;

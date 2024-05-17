@@ -1,32 +1,29 @@
-@font-face {
-    font-family: 'nimbus_sans_lbold';
-    src: url('../fonts/nimbussanl-bol-webfont.woff2') format('woff2'),
-         url('../fonts/nimbussanl-bol-webfont.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-}
+/* 
+font-family: "nimbus-sans", sans-serif;
+font-weight: 400;
+font-style: normal;
 
-@font-face {
-    font-family: 'nimbus_sans_lbold_italic';
-    src: url('../fonts/nimbussanl-bolita-webfont.woff2') format('woff2'),
-         url('../fonts/nimbussanl-bolita-webfont.woff') format('woff');
-    font-weight:700;
-    font-style: italic;
-}
+font-family: "nimbus-sans", sans-serif;
+font-weight: 400;
+font-style: italic;
 
-@font-face {
-    font-family: 'nimbus_sans_lregular';
-    src: url('../fonts/nimbussanl-reg-webfont.woff2') format('woff2'),
-         url('../fonts/nimbussanl-reg-webfont.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-}
+font-family: "nimbus-sans", sans-serif;
+font-weight: 700;
+font-style: normal;
 
-@font-face {
-    font-family: 'nimbus_sans_lregular_italic';
-    src: url('../fonts/nimbussanl-regita-webfont.woff2') format('woff2'),
-         url('../fonts/nimbussanl-regita-webfont.woff') format('woff');
-    font-weight : 700;
-    font-style: italic;
+font-family: "nimbus-sans", sans-serif;
+font-weight: 700;
+font-style: italic;
 
-}
+font-family: "nimbus-sans-extended", sans-serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: "nimbus-sans-extended", sans-serif;
+font-weight: 700;
+font-style: normal;
+
+font-family: "nimbus-sans-extended", sans-serif;
+font-weight: 300;
+font-style: normal;
+*/
