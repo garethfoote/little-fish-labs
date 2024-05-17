@@ -3,16 +3,24 @@
     @apply text-black text-md mb-6;
   }
 
-  h1, .lfl-heading-l {
+  h1 {
     @apply text-2xl font-normal;
   }
 
-  h2, .lfl-heading-m {
+  h2, .lfl-heading-l {
     @apply font-extended text-3xl font-light;
   }
+  
+  .lfl-heading-m {
+    @apply font-extended text-2xl font-light;
+  }
 
-  h3, .lfl-heading-s {
-    @apply font-extended font-light text-lg;
+  .lfl-heading-s {
+    @apply font-extended text-xl font-light;
+  }
+
+  h3, .lfl-heading-xs {
+    @apply font-extended text-lg font-light ;
   }
   .eyebrow {
     @apply font-extended font-normal text-base mb-4 uppercase text-gray-700;

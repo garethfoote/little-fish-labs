@@ -32,6 +32,10 @@ module.exports = {
         "blue-600": "#1401D3",
         "blue-700": "#060674",
         black: "#2E2C2C",
+        "grey-100": "#E5E5E5"
+      },
+      screens: {
+        'xs': '512px'
       },
     },
   },
