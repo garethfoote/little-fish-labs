@@ -28,7 +28,7 @@
     @apply h-auto;
   }
   .lfl-hp-team-member__image img {
-    @apply object-cover w-full h-full max-h-[75svh];
+    @apply object-cover w-full h-full max-h-[50svh] xs:max-h-[60svh] sm:max-h-none;
   }
   .lfl-hp-team-member__content {
     flex: 2;
