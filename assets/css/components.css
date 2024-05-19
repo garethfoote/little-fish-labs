@@ -32,7 +32,7 @@
   }
   .lfl-hp-team-member__content {
     flex: 2;
-    @apply p-8;
+    @apply p-4 xs:p-6 sm:p-8;
   }
   .lfl-hp-team-member__title {
     @apply mb-2;
