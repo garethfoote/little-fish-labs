@@ -20,7 +20,7 @@
 	  <div class="lfl-section md:h-72">
       <div class="lfl-hp-quote bottom-border py-6">
         <div class="lfl-hp-quote__image">
-          <img class="block" src="{{get_image(post.meta('quote_block').image).src}}" alt="Picture of founder Jade"/>
+          <img class="block" src="{{get_image(post.meta('quote_block').image).src}}" alt="{{get_image(post.meta('quote_block').image).alt|default(get_image(post.meta('quote_block').image).title)}}"/>
         </div>
         <div>
           <div class="lfl-hp-quote__quote mb-4">
