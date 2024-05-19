@@ -24,8 +24,8 @@
     @apply border border-blue-400;
   }
   .lfl-hp-team-member__image {
-    @apply h-auto;
     flex: 0 1 33%;
+    @apply h-auto;
   }
   .lfl-hp-team-member__image img {
     @apply object-cover w-full h-full max-h-[75svh];
@@ -108,10 +108,15 @@
   }
 
   .lfl-hp-quote__image {
-    @apply flex flex-col justify-center;
+    @apply basis-40 shrink-0;
     @apply mb-6 sm:mb-0;
     @apply mx-auto sm:mx-0;
-    @apply w-40 h-40 rounded-full overflow-hidden;
+    @apply overflow-hidden;
+  }
+
+  .lfl-hp-quote__image img {
+    @apply mx-auto;
+    @apply w-40 h-40 max-w-none rounded-full object-cover;
   }
 
   .lfl-hp-quote__quote {
@@ -174,5 +179,4 @@
     @apply bg-white text-blue-700;
     @apply relative;
   }
-
 }
