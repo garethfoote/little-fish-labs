@@ -86,4 +86,51 @@
       </div>
     </div>
   </section>
+
+  <section class="bg-white pb-12 overflow-hidden">
+	  <div class="lfl-section">
+      <div class="bottom-border pb-0">
+        <h2 class="eyebrow mb-0">{{post.meta('section_title')}}</h2>
+        <p class="lfl-heading-xs text-blue-700">{{post.meta('section_subtitle')}}</p>
+        <p class="max-w-prose mb-8">{{post.meta('section_introduction')}}</p>
+        <div class="glide">
+          <div data-glide-el="track" class="glide__track">
+            <ul class="glide__slides">
+              {% for team_member in get_posts(post.meta('team_members')) %}
+              <li class="glide__slide">
+                <article class="lfl-hp-team-member">
+                  <div class="lfl-hp-team-member__image">
+                    <img src="{{get_image(team_member.meta('member_image')).src}}" alt="Logo for {{team_member.title}}" />
+                  </div>
+                  <div class="lfl-hp-team-member__content">
+                    <h3 class="lfl-hp-team-member__title">{{team_member.title}}</h3>
+                    <p class="lfl-hp-team-member__role">{{team_member.role}}</p>
+                    <p>{{team_member.member_bio}}</p>
+                  </div>
+                </article>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="lfl_glide-controls" data-glide-el="controls">
+            <button class="slider__arrow slider__arrow--prev glide__arrow glide__arrow--prev" data-glide-dir="<">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                <path d="M0 12l10.975 11 2.848-2.828-6.176-6.176H24v-3.992H7.646l6.176-6.176L10.975 1 0 12z"></path>
+              </svg>
+            </button>
+
+            <button class="slider__arrow slider__arrow--next glide__arrow glide__arrow--next" data-glide-dir=">">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
 {% endblock %}

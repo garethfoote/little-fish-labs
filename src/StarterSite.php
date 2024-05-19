@@ -10,7 +10,7 @@ class StarterSite extends Site {
 		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
-		add_action( 'init', array( $this, 'lfl_remove_jquery' ) );
+    add_filter( 'wp_enqueue_scripts', array( $this, 'lfl_remove_jquery') );
 
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
@@ -34,8 +34,8 @@ class StarterSite extends Site {
 	 */
   public function lfl_remove_jquery() {
     if (!is_admin()) {
-      wp_deregister_script('jquery');
-      wp_register_script('jquery', false);
+      wp_dequeue_script( 'jquery');
+      wp_deregister_script( 'jquery'); 
     }
   }
 
@@ -94,7 +94,7 @@ class StarterSite extends Site {
 		 $theme_directory = $theme->get_stylesheet();
 
 		 wp_enqueue_script('vite', 'http://localhost:5173/@vite/client', [], null);
-		 wp_enqueue_script('main-js', 'http://localhost:5173/assets/js/main.js', ['jquery'], null, true);
+		 wp_enqueue_script('main-js', 'http://localhost:5173/assets/js/main.js', [], null, true);
 		 wp_enqueue_style('style-css', 'http://localhost:5173/assets/css/styles.css', [], 'null');
 	   
 		} elseif (file_exists($manifestPath)) {

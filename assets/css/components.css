@@ -1,6 +1,47 @@
 @layer components {
 
 
+  /*
+   * Controls for carousel/slider
+   */
+  .lfl_glide-controls {
+    @apply flex gap-4 h-20 justify-center items-center;
+  }
+
+  /*
+   * Homepage Team blocks
+   */
+
+  /* 
+  .lfl-hp-teams-container {
+    @apply grid grid-cols-1 gap-8;
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-8;
+  } */
+  
+  .lfl-hp-team-member {
+    @apply sm:flex sm:gap-8;
+    @apply bg-gray-100 rounded-lg overflow-hidden;
+    @apply border border-blue-400;
+  }
+  .lfl-hp-team-member__image {
+    @apply h-auto;
+    flex: 0 1 33%;
+  }
+  .lfl-hp-team-member__image img {
+    @apply object-cover w-full h-full max-h-[75svh];
+  }
+  .lfl-hp-team-member__content {
+    flex: 2;
+    @apply p-8;
+  }
+  .lfl-hp-team-member__title {
+    @apply mb-2;
+    @apply font-extended font-light text-lg text-blue-700;
+  }
+  .lfl-hp-team-member__role {
+    @apply mb-6;
+    @apply font-extended text-md text-black;
+  }
 
   /*
    * Homepage Brand blocks
@@ -32,8 +73,6 @@
     @apply mb-auto;
   }
 
-
-  
   /*
    * Homepage hero
    */

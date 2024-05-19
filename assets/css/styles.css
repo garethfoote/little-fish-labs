@@ -2,11 +2,15 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities"; 
 
-@import "fonts";
+@import "@glidejs/glide/dist/css/glide.core.css";
 
 @import "base";
 @import "components";
 @import "utilities";
+
+.glide__track {
+  @apply overflow-visible;
+}
 
 nav li a {
   display: block;
