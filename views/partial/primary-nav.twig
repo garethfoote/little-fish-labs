@@ -1,0 +1,23 @@
+<div class="my-auto relative z-10 w-full">
+  <div class="flex items-center justify-center md:justify-between h-full">
+    <div class="lfl-logo">
+      <a href="/">  
+        <svg width="100%" aria-labelledby="litle-fish-title" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1080 274">
+          <title id="litle-fish-title">Little Fish Labs</title>
+          <use href="#little-fish-lab-logo" /> 
+        </svg>
+      </a>
+    </div>
+    <nav id="nav-main" class="nav-main hidden md:block">
+    {% if menu %}
+      <ul class="flex items-center">
+      {% for item in menu.get_items %}
+        <li class="{{ item.classes | join(' ') }}">
+          <a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+        </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+    </nav>
+  </div>
+</div>

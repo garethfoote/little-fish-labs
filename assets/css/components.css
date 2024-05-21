@@ -1,6 +1,33 @@
 @layer components {
 
 
+
+
+  /*
+   * Icon
+   */
+  .lfl-icon {
+    @apply block rounded-full bg-white h-12 w-12;
+  }
+  
+  /*
+   * Footer
+   */
+  .lfl-footer {
+    @apply md:grid grid-cols-3 justify-between items-center mt-3 mb-5;
+  }
+
+  .lfl-footer__logo-copyright {
+    @apply col-start-2 flex flex-col items-center;
+    @apply mb-6;
+  }
+  .lfl-footer__socials {
+    @apply col-start-3 flex gap-4 justify-center;
+  }
+  .lfl-footer__socials a {
+    @apply mb-0;
+  }
+
   /*
    * Controls for carousel/slider
    */
