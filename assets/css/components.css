@@ -6,17 +6,21 @@
   .lfl-about-team-member {
     @apply md:flex md:mb-6 clear-right;
   }
-
+  
   .lfl-about-team-member:nth-of-type(even) {
     @apply flex-row-reverse;
   }
   
   .lfl-about-team-member__image {
-    @apply flex-1 mx-auto;
+    @apply flex-1;
+  }
+  
+  .lfl-about-team-member__image img {
+    @apply mx-auto;
   }
 
   .lfl-about-team-member__content {
-    @apply flex-1;
+    @apply flex-1 flex flex-col justify-center;
   }
 
   .lfl-about-team-member__title {
@@ -39,8 +43,8 @@
     content: "";
     background-image: url('../img/about-page-hero.png');
     @apply bg-no-repeat bg-contain bg-center;
-    @apply w-full h-[460px];
-    @apply absolute top-0 -right-full;
+    @apply w-full h-60 md:h-[460px];
+    @apply block md:absolute top-0 -right-full;
   }
 
 
