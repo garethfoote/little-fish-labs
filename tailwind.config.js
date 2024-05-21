@@ -30,10 +30,10 @@ module.exports = {
       colors: {
         "blue-400": "#4D6AF5",
         blue: "#084FF9",
-        "blue-600": "#1401D3",
-        "blue-700": "#060674",
-        black: "#2E2C2C",
-        "grey-100": "#E5E5E5"
+        "blue-600": "#1301D0", /* 1301E8 */
+        "blue-700": "#050577",
+        black: "#000",
+        "gray-dark": "#4D5149"
       },
       screens: {
         'xs': '512px'

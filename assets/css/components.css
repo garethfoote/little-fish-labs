@@ -1,6 +1,47 @@
 @layer components {
 
+  /*
+   * About Team Member
+   */
+  .lfl-about-team-member {
+    @apply md:flex md:mb-6 clear-right;
+  }
 
+  .lfl-about-team-member:nth-of-type(even) {
+    @apply flex-row-reverse;
+  }
+  
+  .lfl-about-team-member__image {
+    @apply flex-1 mx-auto;
+  }
+
+  .lfl-about-team-member__content {
+    @apply flex-1;
+  }
+
+  .lfl-about-team-member__title {
+    @apply lfl-heading-s text-blue-700;
+  }
+
+  .lfl-about-team-member__role {
+    @apply font-extended font-normal;
+  }
+
+  /*
+   * Page hero
+   */
+   .lfl-page-hero {
+    @apply md:w-1/2;
+    @apply relative;
+  }
+
+  .lfl-page-hero:after {
+    content: "";
+    background-image: url('../img/about-page-hero.png');
+    @apply bg-no-repeat bg-contain bg-center;
+    @apply w-full h-[460px];
+    @apply absolute top-0 -right-full;
+  }
 
 
   /*
@@ -62,12 +103,12 @@
     @apply p-4 xs:p-6 sm:p-8;
   }
   .lfl-hp-team-member__title {
-    @apply mb-2;
-    @apply font-extended font-light text-lg text-blue-700;
+    @apply mb-0;
+    @apply font-extended font-light text-lg text-blue-600;
   }
   .lfl-hp-team-member__role {
     @apply mb-6;
-    @apply font-extended text-md text-black;
+    @apply font-extended text-md text-black font-normal;
   }
 
   /*
@@ -100,6 +141,7 @@
   .lfl-hp-brand__content > div {
     @apply mb-auto;
   }
+
 
   /*
    * Homepage hero

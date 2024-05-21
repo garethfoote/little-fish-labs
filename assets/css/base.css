@@ -1,6 +1,6 @@
 @layer base {
   a, p {
-    @apply text-black text-md mb-6;
+    @apply text-black text-md mb-6 font-light;
   }
 
   h1 {
@@ -22,11 +22,24 @@
   h3, .lfl-heading-xs {
     @apply font-extended text-lg font-light ;
   }
+
   .eyebrow {
-    @apply font-extended font-normal text-base mb-4 uppercase text-gray-700;
+    @apply font-extended font-normal text-base mb-4 uppercase text-gray-dark;
   }
 
   a {
     @apply font-extended font-light text-white;
+  }
+
+  nav li a {
+    @apply block w-24;
+    @apply px-2 py-0 my-0; 
+    @apply text-center;
+  }
+  
+  .lfl-page-break {
+    @apply h-[12px];
+    background-image: url("../img/blue-wave.svg");
+    border: none;
   }
 }
