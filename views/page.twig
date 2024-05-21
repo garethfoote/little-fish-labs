@@ -4,35 +4,19 @@
 
   <div class="bg-white pb-12">
 	  <section class="lfl-section pt-12">
-      <div class="lfl-page-hero">
+      <div class="lfl-page-hero{% if template %} lfl-page-hero--{{template}}{%endif%}">
         <h1>
           <div class="eyebrow mb-0">{{post.title}}</div>
-          <div class="lfl-heading-s xs:lfl-heading-m sm:lfl-heading-l text-blue-600 mb-8">{{post.meta('subtitle')|default("Meet the team")}}</div>
+          {% if not post.meta('subtitle') == "" %}
+          <div class="lfl-heading-s xs:lfl-heading-m sm:lfl-heading-l text-blue-600 mb-8">{{post.meta('subtitle')}}</div>
+          {% endif %}
         </h1>
         <div class="max-w-prose mb-12">{{post.meta('content')|default(post.content)}}</div>
-        <p class="lfl-heading-s xs:lfl-heading-m sm:lfl-heading-l text-blue">&ldquo;{{post.meta('hero_quote')|default("We’re professional disruptors, helping humans connect with wellbeing")}}&rdquo;</h2>
+        {% if not post.meta('large_quote')|trim == "" %}
+        <p class="lfl-heading-s xs:lfl-heading-m sm:lfl-heading-l text-blue">&ldquo;{{post.meta('large_quote')}}&rdquo;</h2>
+        {% endif %}
       </div>
-      <hr class="mt-10 md:mt-16 md:mb-4 lfl-page-break">
-    </section>
-
-    <section class="lfl-section pt-12">
-      <h2 class="eyebrow md:float-right w-1/2">{{post.meta('team_members_section_title')|default("Our team")}}</h2>
-    {% for team_member in get_posts(post.meta('team_members')) %}
-      <article id="team-member-{{team_member.id}}" class="lfl-about-team-member">
-        <div class="lfl-about-team-member__image">
-          <img src="{{get_image(team_member.meta('images').about_page).src}}" alt="Picture of {{team_member.title}}" />
-        </div>
-        <div class="lfl-about-team-member__content flex-1">
-          <h3 class="lfl-about-team-member__title">{{team_member.title}}</h3>
-          <p class="lfl-about-team-member__role">{{team_member.role}}</p>
-          <p class="mb-0">{{team_member.member_bio}}</p>
-        </div>
-      </article>
-      {% if not loop.last %}
-      <hr class="lfl-page-break  my-12 md:mt-0 w-2/3 mx-auto">
-      {% endif %}
-    {% endfor %}
-    </section>
+      {# <hr class="mt-10 md:mt-16 md:mb-4 lfl-page-break"> #}
+    </section>  
   </div>
-
 {% endblock %}

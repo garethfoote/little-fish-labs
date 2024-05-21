@@ -1,6 +1,6 @@
 @layer base {
   a, p {
-    @apply text-black text-md mb-6 font-light;
+    @apply text-md mb-6 font-light;
   }
 
   h1 {
@@ -31,8 +31,12 @@
     @apply font-extended font-light text-white;
   }
 
+  .lfl-content p {
+    max-width: 80ch;
+  }
+
   nav li a {
-    @apply block w-24;
+    @apply block min-w-24;
     @apply px-2 py-0 my-0; 
     @apply text-center;
   }
