@@ -165,7 +165,7 @@
 
   @media screen(md) {
     .lfl-hp-hero {
-      min-height: clamp(648px, 100svh - 140px, 100svh - 140px);
+      min-height: clamp(648px, 100svh - 140px, 1024px);
     }
   }
 
