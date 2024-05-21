@@ -6,7 +6,7 @@
 </h1>
 
 {% if not post.meta("page_introduction") == "" %}
-<div class="max-w-prose mb-12 text-white">{{post.meta("page_introduction")}}</div>
+<div class="max-w-prose sm:mb-12 text-white">{{post.meta("page_introduction")}}</div>
 {% endif %}
 {% if not post.meta('large_quote')|trim == "" %}
 <p class="lfl-heading-s xs:lfl-heading-m sm:lfl-heading-l text-white">&ldquo;{{post.meta('large_quote')}}&rdquo;</h2>
