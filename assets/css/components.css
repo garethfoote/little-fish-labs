@@ -57,7 +57,8 @@
   
   .lfl-hp-brand__image {
     @apply flex-1;
-    @apply sm:h-3/4;
+    @apply max-w-64 mx-auto sm:h-3/4;
+    
   }
 
   .lfl-hp-brand__image img {
@@ -90,6 +91,19 @@
       min-height: clamp(648px, 100svh - 140px, 100svh - 140px);
     }
   }
+
+  .lfl-hp-hero__intro-panel {
+   @apply max-w-md; 
+   @apply relative left-[3%] top-12 md:top-20 lg:top-40;
+  }
+
+  /*
+   * Homepage hero intro
+   */
+   .lfl-hp-hero-intro {
+
+   }
+
 
   /*
    * Homepage Logo
