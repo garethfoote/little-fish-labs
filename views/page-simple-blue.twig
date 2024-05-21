@@ -2,15 +2,17 @@
 
 {% block content %}
 
-<div class="bg-blue pb-12">
-  <section class="lfl-section pt-12">
+<section class="bg-blue">
+  <div class="lfl-section pt-12">
     <div class="lfl-page-hero lfl-page-hero--white products">
       {% include "partial/page-hero-blue.twig" %}
     </div>
-  </section> 
-  <section class="bg-white lfl-content lfl-section py-12">
-    {{post.content}}
-  </section>
-</div>
+  </div> 
+</section>
 
+<section class="bg-white py-12">
+  <div class="lfl-content lfl-section">
+  {{post.content}}
+  </div>
+</section>
 {% endblock %}

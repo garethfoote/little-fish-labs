@@ -70,7 +70,7 @@
         {% for brand in get_posts(post.meta('brands')) %}
           <article class="lfl-hp-brand">
             <div class="lfl-hp-brand__image">
-              <img src="{{get_image(brand.meta('brand_image')).src}}" alt="Logo for {{brand.title}}" />
+              <img src="{{get_image(brand.meta('images').homepage).src}}" alt="Logo for {{brand.title}}" />
             </div>
             <div class="lfl-hp-brand__content">
               <div>

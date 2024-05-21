@@ -35,6 +35,10 @@
     max-width: 80ch;
   }
 
+  strong {
+    @apply font-bold;
+  }
+
   nav li a {
     @apply block min-w-24;
     @apply px-2 py-0 my-0; 

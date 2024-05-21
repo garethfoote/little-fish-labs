@@ -28,4 +28,10 @@ $context['post'] = $timber_post;
 
 $selected_template = $context['post']->meta('template');
 
+if($selected_template == "product"){
+  $context['brands'] = Timber::get_posts([
+    'post_type' => 'lfl_brands'
+  ]); 
+}
+
 Timber::render( array( 'page-' . $selected_template . '.twig', 'page-' . $timber_post->post_name . '.twig', 'page.twig' ), $context );

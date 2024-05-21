@@ -1,4 +1,56 @@
 @layer components {
+  /*
+   * Our Brands - Brand and Product
+   */
+
+  .lfl-brand-product-container {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-8;
+  }
+
+  .lfl-brand-product {
+    @apply p-6;
+    @apply bg-gray-100 rounded-lg overflow-hidden;
+  }
+
+  .lfl-brand-product__header {
+    @apply sm:flex gap-4 justify-between;
+    @apply mb-6 md:mb-2;
+  }
+  
+  .lfl-brand-product__image {
+    @apply basis-40 shrink-0;
+    @apply overflow-hidden;
+  }
+
+  .lfl-brand-product__image img {
+    @apply mx-auto;
+    @apply w-40 h-40 max-w-none rounded-full object-cover;
+  }
+
+  /*
+   * Our Brands - Brand and Product
+   */
+   .lfl-brand-container {
+    /* @apply grid grid-cols-1 lg:grid-cols-2 gap-8; */
+  }
+
+  .lfl-brand {
+    @apply mb-16;
+  }
+
+  .lfl-brand__image img {
+    @apply object-contain mx-auto max-h-40 mb-6;
+  }
+
+  .lfl-brand__strapline {
+    @apply font-extended text-lg sm:text-xl md:text-2xl text-blue text-center;
+    @apply w-5/6 max-w-[860px] mx-auto mb-6;
+  }
+
+  .lfl-brand__description {
+    @apply md:w-2/6 mb-8 sm:mb-16 mx-auto text-center;
+  }
+
 
   /*
    * About Team Member
@@ -134,7 +186,6 @@
   .lfl-hp-brand__image {
     @apply flex-1;
     @apply max-w-64 mx-auto sm:h-3/4;
-    
   }
 
   .lfl-hp-brand__image img {
@@ -211,7 +262,7 @@
   }
 
   .lfl-hp-quote__quote {
-    @apply text-lg sm:text-xl md:text-2xl text-blue;
+    @apply text-lg sm:text-xl md:text-2xl text-blue-700;
   }
   .lfl-hp-quote__name {
     @apply text-md text-blue-700;
