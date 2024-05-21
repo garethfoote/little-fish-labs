@@ -14,9 +14,9 @@
 
 <section class="bg-white py-12">
   <div class="lfl-section">
-      <h2 class="eyebrow pb-6 md:pb-0 md:mb-0">{{post.meta("title")|default(post.title)}}</h2>
+    <h2 class="eyebrow pb-6 md:pb-0 md:mb-0">{{post.meta("title")|default(post.title)}}</h2>
       {% for brand in brands %}
-        <div class="lfl-brand">
+        <div id="brand-{{brand.id}}" class="lfl-brand">
           <h2 class="lfl-brand__image">
             <img src="{{get_image(brand.meta('images').our_brands).src}}" alt="{{brand.title}}" />
           </h2>

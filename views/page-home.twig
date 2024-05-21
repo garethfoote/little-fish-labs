@@ -76,7 +76,7 @@
               <div>
                 {{brand.meta('brand_description')}}
               </div>
-              <a href="" class="lfl-link-button mb-0">Learn more
+              <a href="{{post.meta('our_brands_page')|default("/our-brands")}}#brand-{{brand.id}}" class="lfl-link-button mb-0">Learn more
                 <span class="sr-only">about {{brand.title}}</span>
               </a>
             </div>
