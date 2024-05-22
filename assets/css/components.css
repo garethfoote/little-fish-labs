@@ -28,7 +28,7 @@
 
   .lfl-nav-overlay {
     @apply hidden;
-    @apply fixed top-0 right-0 left-0 bottom-0;
+    @apply fixed top-0 right-0 left-0 bottom-0 z-50;
     @apply overflow-scroll h-screen;
     @apply bg-blue;
   }
@@ -168,11 +168,11 @@
   .lfl-page-hero--right {
     @apply flex-row-reverse gap-8;
   }
-  .lfl-page-hero__content {
-    @apply relative z-50 bg-blue/[.70];
+  .lfl-page-hero__content--overlay {
+    @apply relative z-10 bg-blue/[.70];
   }
   @media screen(md) {
-    .lfl-page-hero__content {
+    .lfl-page-hero__content--overlay {
       @apply bg-transparent;
     }
   }
