@@ -134,6 +134,13 @@
   .lfl_glide-controls {
     @apply flex gap-4 h-20 justify-center items-center;
   }
+  
+  .lfl_glide-controls .slider__arrow:hover svg .bg {
+    fill: #1301CF;
+  }
+  .lfl_glide-controls .slider__arrow:hover svg .fg {
+    fill: white;
+  }
 
   /*
    * Homepage Team blocks
@@ -296,7 +303,7 @@
 
   .lfl-wwd__title {
     @apply mb-2;
-    @apply font-extended font-light text-lg text-blue-700;
+    @apply font-extended font-light text-lg text-blue;
   }
 
   .lfl-wwd__detail {

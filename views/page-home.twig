@@ -18,7 +18,7 @@
 
 	<section class="bg-white pb-12">
 	  <div class="lfl-section md:h-72">
-      <div class="lfl-hp-quote bottom-border py-6">
+      <div class="lfl-hp-quote py-6">
         <div class="lfl-hp-quote__image">
           <img class="block" src="{{get_image(post.meta('quote_block').image).src}}" alt="{{get_image(post.meta('quote_block').image).alt|default(get_image(post.meta('quote_block').image).title)}}"/>
         </div>
@@ -26,17 +26,18 @@
           <div class="lfl-hp-quote__quote mb-4">
             &ldquo;{{post.meta('quote_block').quote}}&rdquo;
           </div>
-          <div class="lfl-hp-quote__name">
+          <div class="lfl-hp-quote__name mb-6">
             {{post.meta('quote_block').name}}
           </div>
+          <a href="{{post.meta('quote_block').link}}" class="lfl-link-button">Learn more</a>
         </div>
       </div>
+      <hr class="lfl-page-break mx-auto">
 		</div>
 	</section>
 
-	<section class="bg-white pb-12">
-	  <div class="lfl-section">
-      <div class="bottom-border pb-12">
+	<section class="bg-white">
+	  <div class="lfl-section pb-12">
         <h2 class="eyebrow pb-6">What we do</h2>
         <div class="lfl-wwd-container">
           {% for item in post.meta('what_we_do_blocks') %}
@@ -54,81 +55,85 @@
               </div>
             </article>
           {% endfor %}
-        </div>
-      </div>
+        </div>  
+      <hr class="lfl-page-break mx-auto mt-12">
     </div>
 	</section>
 
   <section class="bg-white pb-12">
 	  <div class="lfl-section">
-      <div class="bottom-border pb-12">
-        <h2 class="eyebrow mb-0">Our Brands</h2>
-        <p class="lfl-heading-xs text-blue-700">Lorem ipsom dolor sit amet</p>
-        <p class="max-w-prose mb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eleifend leo ac hendrerit posuere. Praesent sed placerat nisi.</p>
+      <h2 class="eyebrow mb-0">Our Brands</h2>
+      <p class="lfl-heading-xs text-blue-700">{{post.meta('hp_ob_section_subtitle')}}</p>
+      <p class="max-w-prose mb-8">{{post.meta('hp_ob_section_description')}}</p>
 
-        <div class="lfl-hp-brands-container">
-        {% for brand in get_posts(post.meta('brands')) %}
-          <article class="lfl-hp-brand">
-            <div class="lfl-hp-brand__image">
-              <img src="{{get_image(brand.meta('images').homepage).src}}" alt="Logo for {{brand.title}}" />
+      <div class="lfl-hp-brands-container">
+      {% for brand in get_posts(post.meta('brands')) %}
+        <article class="lfl-hp-brand">
+          <div class="lfl-hp-brand__image">
+            <img src="{{get_image(brand.meta('images').homepage).src}}" alt="Logo for {{brand.title}}" />
+          </div>
+          <div class="lfl-hp-brand__content">
+            <div>
+              {{brand.meta('brand_description')}}
             </div>
-            <div class="lfl-hp-brand__content">
-              <div>
-                {{brand.meta('brand_description')}}
-              </div>
-              <a href="{{post.meta('our_brands_page')|default("/our-brands")}}#brand-{{brand.id}}" class="lfl-link-button mb-0">Learn more
-                <span class="sr-only">about {{brand.title}}</span>
-              </a>
-            </div>
-          </article>
-        {% endfor %}
-        </div>
+            <a href="{{post.meta('our_brands_page')|default("/our-brands")}}#brand-{{brand.id}}" class="lfl-link-button mb-0">Learn more
+              <span class="sr-only">about {{brand.title}}</span>
+            </a>
+          </div>
+        </article>
+      {% endfor %}
       </div>
+      <hr class="lfl-page-break mx-auto mt-16">
     </div>
   </section>
 
   <section class="bg-white pb-12 overflow-hidden">
 	  <div class="lfl-section">
-      <div class="bottom-border pb-0">
-        <h2 class="eyebrow mb-0">{{post.meta('section_title')}}</h2>
-        <p class="lfl-heading-xs text-blue-700">{{post.meta('section_subtitle')}}</p>
-        <p class="max-w-prose mb-8">{{post.meta('section_introduction')}}</p>
-        <div class="glide">
-          <div data-glide-el="track" class="glide__track">
-            <ul class="glide__slides">
-              {% for team_member in get_posts(post.meta('team_members')) %}
-              <li class="glide__slide">
-                <article class="lfl-hp-team-member">
-                  <div class="lfl-hp-team-member__image">
-                    <img src="{{get_image(team_member.meta('member_image')).src}}" alt="Piciture of {{team_member.title}}" />
-                  </div>
-                  <div class="lfl-hp-team-member__content">
-                    <h3 class="lfl-hp-team-member__title">{{team_member.title}}</h3>
-                    <p class="lfl-hp-team-member__role">{{team_member.role}}</p>
-                    <p class="mb-4 min-h-[7.5rem]">{{team_member.short_bio|default(team_member.member_bio)|excerpt(30)}}</p>
-                    <a class="lfl-link-button" href="">Learn more<span class="sr-only">about {{team_member.title}}</span></a>
-                  </div>
-                </article>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-          <div class="lfl_glide-controls" data-glide-el="controls">
-            <button class="slider__arrow slider__arrow--prev glide__arrow glide__arrow--prev" data-glide-dir="<">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-                <path d="M0 12l10.975 11 2.848-2.828-6.176-6.176H24v-3.992H7.646l6.176-6.176L10.975 1 0 12z"></path>
-              </svg>
-            </button>
-
-            <button class="slider__arrow slider__arrow--next glide__arrow glide__arrow--next" data-glide-dir=">">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-                <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"></path>
-              </svg>
-            </button>
-          </div>
+      <h2 class="eyebrow mb-0">About</h2>
+      <p class="lfl-heading-xs text-blue-700">{{post.meta('hp_about_section_subtitle')}}</p>
+      <p class="max-w-prose mb-8">{{post.meta('hp_about_section_introduction')}}</p>
+      <div class="glide">
+        <div data-glide-el="track" class="glide__track">
+          <ul class="glide__slides">
+            {% for team_member in get_posts(post.meta('team_members')) %}
+            <li class="glide__slide">
+              <article class="lfl-hp-team-member">
+                <div class="lfl-hp-team-member__image">
+                  <img src="{{get_image(team_member.meta('member_image')).src}}" alt="Piciture of {{team_member.title}}" />
+                </div>
+                <div class="lfl-hp-team-member__content">
+                  <h3 class="lfl-hp-team-member__title">{{team_member.title}}</h3>
+                  <p class="lfl-hp-team-member__role">{{team_member.role}}</p>
+                  <p class="mb-4 min-h-[7.5rem]">{{team_member.short_bio|default(team_member.member_bio)|excerpt(30)}}</p>
+                  <a class="lfl-link-button" href="">Learn more<span class="sr-only">about {{team_member.title}}</span></a>
+                </div>
+              </article>
+            </li>
+            {% endfor %}
+          </ul>
         </div>
 
+        <div class="lfl_glide-controls" data-glide-el="controls">
+          <button class="slider__arrow slider__arrow--prev glide__arrow glide__arrow--prev" data-glide-dir="<">
+            <svg width="60" height="60" aria-labelledby="lfl-arrow-l" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="Layer_1" x="0" y="0" version="1.1" viewBox="0 0 171.23 179.77">
+              <title id="lfl-arrow-l">Left</title>
+              <circle class="bg" cx="85.4" cy="90.4" r="57.1" fill="none" stroke="#084ff9" stroke-miterlimit="10" stroke-width="2.942"/>
+              <path class="fg" fill="#1301CF" d="M71.33 107.75 40.45 90.37l30.49-18.05 30.48-18.05.39 35.43.39 35.43z" class="st1"/>
+              <path fill="#35A7E3" d="m112.93 95.96-12.01-6.76 11.86-7.02 11.86-7.03.15 13.79.15 13.78z" class="st1"/>
+              <circle cx="67.8" cy="89.92" r="5.85" fill="#35a7e3"/>
+            </svg>
+          </button>
 
+          <button class="slider__arrow slider__arrow--next glide__arrow glide__arrow--next" data-glide-dir=">">
+            <svg width="60" height="60"  aria-labelledby="lfl-arrow-r"  xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="Layer_1" x="0" y="0" version="1.1" viewBox="0 0 171.23 179.77">
+              <title id="lfl-arrow-r">Right</title>
+              <circle class="bg" cx="85.4" cy="90.4" r="57.1" fill="none" stroke="#084ff9" stroke-miterlimit="10" stroke-width="2.942"/>
+              <path class="fg" fill="#1301CF" d="m99.48 107.75 30.87-17.38-30.49-18.05-30.48-18.05-.39 35.43-.39 35.43z" class="st1"/>
+              <path fill="#35A7E3" d="m57.87 95.96 12.01-6.76-11.86-7.02-11.86-7.03-.15 13.79-.15 13.78z" class="st1"/>
+              <circle cx="103.01" cy="89.92" r="5.85" fill="#35a7e3"/>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   </section>
