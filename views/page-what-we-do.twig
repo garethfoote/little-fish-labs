@@ -12,7 +12,26 @@
           <img src="{{get_image(post.meta('hero_image')).src}}" alt="{{get_image(post.meta('hero_image').image).alt|default(get_image(post.meta('hero_image')).title)}}" />
         </div>
       </div>
-      <hr class="mt-10 md:mt-16 md:mb-4 lfl-page-break">
     </section>   
+    
+    <section class="lfl-section pt-12">
+      <p class="lfl-callout mt-18">
+        Cras quam lacus, interdum et pulvinar et, hendrerit aliquam erat sumus erat nibh lorem ipsom.
+      </p>
+    </section>
+
+    <section class="lfl-section pt-12">
+      <div class="lfl-wwd-container">
+      {% for item in post.meta('wwd_blocks') %}
+        <article class="lfl-wwd">
+          <div class="mb-6">
+            <img class="object-fill max-w-[100px] max-h-[100px]" src="{{ get_image(item.wwd_icon).src }}" aria-hidden="true"/>
+          </div>
+          <h3 class="text-blue-600 mb-4">{{ item.post_title }}</h3>
+          <div class="max-w-prose">{{ item.wwd_detail|wpautop }}</div>
+        </article>
+    {% endfor %}
+    </div>
+    </section>
   </div>
 {% endblock %}

@@ -39,6 +39,9 @@ module.exports = {
       screens: {
         'xs': '512px'
       },
+      borderRadius: {
+        'xl': '1rem',
+      }
     },
   },
   plugins: [require("@tailwindcss/typography")],

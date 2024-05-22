@@ -74,6 +74,7 @@ class StarterSite extends Site {
       'edit.php?post_type=page', // Pages
       'edit.php?post_type=lfl_brands', // Brands
       'edit.php?post_type=lfl_team', // Team
+      'edit.php?post_type=lfl_wwd', // What we do
       'separator2', // Second separator
       'upload.php', // Media
       'separator-last', // Last separator
@@ -148,6 +149,25 @@ class StarterSite extends Site {
 				'supports' => array('title')
 			)
 		);
+
+    register_post_type('lfl_wwd',
+      array(
+        'labels'      => array(
+          'name'          => __('What We Do', 'textdomain'),
+          'singular_name' => __('What We Do item', 'textdomain'),
+          'edit_item' => 'Edit What We Do item',
+          'view_item' => 'View What We Do item',
+          'view_items' => 'View What We Do items',
+          'add_new_item' => 'Add New What We Do item',
+          'add_new' => 'Add New What We Do item',
+          'new_item' => 'New What We Do item',
+        ),
+        'public'      => true,
+        'has_archive' => false,
+        'menu_icon' => 'dashicons-hammer',
+        'supports' => array('title')
+      )
+    );
 		
 	}
 

@@ -1,6 +1,28 @@
 @layer components {
 
   /*
+   * Callout
+   */
+  .lfl-callout {
+    @apply font-extended text-2xl bg-blue text-white text-center p-12 rounded-xl;
+  }
+  
+  /*
+   * What We Do container and blocks
+   */
+   @media screen(sm) {
+    .lfl-wwd-container {
+      @apply grid lg:grid-cols-2 gap-12 lg:gap-6 xl:gap-12;
+    }
+  }
+
+  .lfl-wwd {
+    @apply flex flex-col;
+    @apply mb-8 sm:mb-0;
+  }
+
+
+  /*
    * Nav Overlay (movile)
    */
 
@@ -361,33 +383,33 @@
   }
 
   /*
-   * What We Do container and blocks
+   * Homepage What We Do container and blocks
    */
   @media screen(sm) {
-    .lfl-wwd-container {
+    .lfl-hp-wwd-container {
       @apply grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-6 xl:gap-12;
     }
   }
 
-  .lfl-wwd {
+  .lfl-hp-wwd {
     @apply flex flex-col;
     @apply mb-8 sm:mb-0;
   }
 
-  .lfl-wwd:last-child {
+  .lfl-hp-wwd:last-child {
     @apply mb-0;
   }
 
-  .lfl-wwd__image {
+  .lfl-hp-wwd__image {
     @apply mb-4;
   }
 
-  .lfl-wwd__title {
+  .lfl-hp-wwd__title {
     @apply mb-2;
     @apply font-extended font-light text-lg text-blue;
   }
 
-  .lfl-wwd__detail {
+  .lfl-hp-wwd__detail {
     @apply font-sans font-light mb-auto pb-6;
   }
 
@@ -396,13 +418,17 @@
    */
   .lfl-link-button {
     @apply whitespace-nowrap;
-    @apply text-center text-blue-700;
-    @apply inline-block py-1 px-12;
+    @apply text-sm text-center text-blue-700;
+    @apply inline-block py-1 px-8;
     @apply border border-blue rounded-full bg-white;
   }
   .lfl-link-button:hover {
     @apply bg-blue text-white;
   } 
+  
+  .lfl-link-button--lg {
+   @apply text-base px-12;
+  }
 
   .lfl-link-button--light {
     @apply text-center text-white bg-transparent;

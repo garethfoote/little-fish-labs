@@ -10,7 +10,7 @@
     class="lfl-hp-hero lfl-section pb-6">
       <div class="lfl-hp-hero__intro-panel text-white">
         <div class="lfl-heading-s xs:lfl-heading-m sm:lfl-heading-l pb-12">{{post.meta('subtitle')}}</div>
-        <a href="{{post.meta('learn_more_link')}}" class="lfl-link-button lfl-link-button--light">Learn more
+        <a href="{{post.meta('learn_more_link')}}" class="lfl-link-button lfl-link-button--lg lfl-link-button--light">Learn more
           <span class="sr-only">about Little Fish Labs</span>
         </a>
 		</div>
@@ -32,25 +32,24 @@
           <a href="{{post.meta('quote_block').link}}" class="lfl-link-button">Learn more</a>
         </div>
       </div>
-      <hr class="lfl-page-break mx-auto">
+      <hr class="lfl-page-break w-1/2 mx-auto">
 		</div>
 	</section>
 
 	<section class="bg-white">
 	  <div class="lfl-section pb-12">
         <h2 class="eyebrow pb-6">What we do</h2>
-        <div class="lfl-wwd-container">
-          {% for item in post.meta('what_we_do_blocks') %}
-            <article class="lfl-wwd">
-              <div class="lfl-wwd__image">
-                <img class="object-fill max-w-[100px] max-h-[100px]" src="{{ get_image(item.icon).src }}" aria-hidden="true"/>
+        <div class="lfl-hp-wwd-container">
+          {% for item in post.meta('wwd_blocks') %}
+            <article class="lfl-hp-wwd">
+              <div class="lfl-hp-wwd__image">
+                <img class="object-fill max-w-[100px] max-h-[100px]" src="{{ get_image(item.wwd_icon).src }}" aria-hidden="true"/>
               </div>
-              <h3 class="lfl-wwd__title">{{ item.title }}</h3>
-              <p class="lfl-wwd__detail">{{ item.detail }}</p>
-              <div class="lfl-wwd__link">
+              <h3 class="lfl-hp-wwd__title mb-auto pb-6">{{ item.post_title }}</h3>
+              <div class="lfl-hp-wwd__link">
                 <a href="" class="lfl-link-button">Learn more
                   <span class="sr-only">about
-                    {{ item.title }}</span>
+                    {{ item.post_title }}</span>
                 </a>
               </div>
             </article>
