@@ -105,7 +105,8 @@
                   <div class="lfl-hp-team-member__content">
                     <h3 class="lfl-hp-team-member__title">{{team_member.title}}</h3>
                     <p class="lfl-hp-team-member__role">{{team_member.role}}</p>
-                    <p class="mb-0">{{team_member.member_bio}}</p>
+                    <p class="mb-4 min-h-[7.5rem]">{{team_member.short_bio|default(team_member.member_bio)|excerpt(30)}}</p>
+                    <a class="lfl-link-button" href="">Learn more<span class="sr-only">about {{team_member.title}}</span></a>
                   </div>
                 </article>
               </li>
