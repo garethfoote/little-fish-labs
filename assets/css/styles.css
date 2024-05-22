@@ -12,19 +12,6 @@
   @apply overflow-visible;
 }
 
-.nav-modal-outer {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: stretch;
-  z-index: -1;
+.is-open {
+  @apply block;
 }
-
-.nav-modal-inner {
-  position: relative;
-  display: block;
-  width: 100%;
-  overflow-y: scroll;
-}
-  

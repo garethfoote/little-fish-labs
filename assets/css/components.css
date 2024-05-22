@@ -1,6 +1,48 @@
 @layer components {
 
   /*
+   * Nav Overlay (movile)
+   */
+
+  .lfl-nav-overlay {
+    @apply hidden;
+    @apply fixed top-0 right-0 left-0 bottom-0;
+    @apply overflow-scroll h-screen;
+    @apply bg-blue;
+  }
+
+  .lfl-nav-mobile__open {
+    @apply absolute right-4 top-4;
+  }
+  
+  .logged-in.admin-bar .lfl-nav-mobile__open {
+    top: calc(1rem + 46px);
+  }
+
+  .lfl-nav-overlay__close {
+    @apply absolute right-4 mt-4;
+  }
+
+  .lfl-nav-overlay__header button {
+    @apply float-right relative right-4;
+  }
+  
+  .logged-in.admin-bar .lfl-nav-overlay {
+    @apply pt-[46px];
+  }
+  
+  @media screen(wp_admin) {
+    .logged-in.admin-bar .lfl-nav-overlay {
+      @apply pt-[32px];
+    }
+  }
+  
+
+  .lfl-nav-mobile__logo {
+    @apply mx-auto pt-6;
+  }
+
+  /*
    * Our Brands - Brand and Product
    */
 
@@ -263,6 +305,7 @@
   .lfl-logo--header {
     @apply relative md:-left-6;
   }
+
 
   /*
    * Homepage Quote Block

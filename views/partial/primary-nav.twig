@@ -1,5 +1,5 @@
-<div class="my-auto relative z-10 w-full">
-  <div class="flex items-center justify-center md:justify-between h-full">
+<div class="my-auto md:relative z-10 w-full">
+  <div class="flex gap-0 items-center justify-center md:justify-between h-full">
     <div class="lfl-logo lfl-logo--header">
       <a href="/">  
         <svg width="100%" aria-labelledby="litle-fish-title" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1080 274">
@@ -8,7 +8,7 @@
         </svg>
       </a>
     </div>
-    <nav id="nav-main" class="nav-main hidden md:block">
+    <nav id="nav-main" class="lfl-nav-main hidden md:block flex-shrink-0">
     {% if menu %}
       <ul class="flex items-center">
       {% for item in menu.get_items %}
@@ -19,5 +19,39 @@
       </ul>
     {% endif %}
     </nav>
+    <div class="lfl-nav-mobile md:hidden lfl-js-nav-mobile">
+      <button class="lfl-nav-mobile__open mobile-nav-open active lfl-icon" aria-expanded="false" aria-controls="nav-menu-ex-1">
+        <span class="sr-only">Menu</span>
+        <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="1.75" y1="2.75" x2="14.25" y2="2.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line><line x1="1.75" y1="7.75" x2="14.25" y2="7.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line><line x1="1.75" y1="12.75" x2="14.25" y2="12.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></line>
+        </svg>
+      </button>
+      <div class="lfl-nav-overlay lfl-js-nav-mobile__overlay">
+        <button class="lfl-nav-overlay__close lfl-icon">
+          <svg stroke="blue" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4L12 12" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"></path>
+            <path stroke="blue" d="M12 4L4 12" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="round"></path></svg>
+        </button>
+        <nav id="nav-mobile" class="lfl-nav-mobile">
+          <div class="lfl-nav-mobile__logo lfl-logo mb-12">
+            <a href="/">  
+              <svg width="100%" aria-labelledby="litle-fish-title" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 1080 274">
+                <title id="litle-fish-title">Little Fish Labs</title>
+                <use href="#little-fish-lab-logo" /> 
+              </svg>
+            </a>
+          </div>
+          {% if menu %}
+            <ul>
+            {% for item in menu.get_items %}
+              <li class="{{ item.classes | join(' ') }}">
+                <a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+              </li>
+            {% endfor %}
+            </ul>
+          {% endif %}
+        </nav>
+      </div>
+    </div>
   </div>
 </div>

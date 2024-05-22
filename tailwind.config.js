@@ -10,6 +10,7 @@ module.exports = {
       extended: ["nimbus-sans-extended", ...defaultTheme.fontFamily.sans],
     },
     screens: {
+      wp_admin: "782px",
       sm: "640px",
       md: "768px",
       lg: "1024px",

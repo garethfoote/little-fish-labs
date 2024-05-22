@@ -39,17 +39,25 @@
     @apply font-bold;
   }
 
-  nav li a {
+  nav.lfl-nav-main  li a {
     @apply block min-w-24;
     @apply px-2 py-0 my-0; 
     @apply text-center;
   }
-
-  nav li.current-menu-item:after {
+  
+  /* nav.lfl-nav-main  li.current-menu-item:after {
     content: " ";
     @apply block w-10 h-10 bg-red-500;
   }
-  
+  */
+
+  nav.lfl-nav-mobile li a {
+    @apply text-lg;
+  } 
+  nav.lfl-nav-mobile li {
+    @apply text-center mb-4;
+  }
+
 
   .lfl-page-break {
     @apply h-[14px];
