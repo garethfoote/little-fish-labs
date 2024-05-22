@@ -28,7 +28,7 @@ $context['post'] = $timber_post;
 
 $selected_template = $context['post']->meta('template');
 
-if($selected_template == "product"){
+if($selected_template == "our-brands"){
   $context['brands'] = Timber::get_posts([
     'post_type' => 'lfl_brands'
   ]); 
