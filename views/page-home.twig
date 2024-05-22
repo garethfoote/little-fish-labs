@@ -2,11 +2,7 @@
 
 {% block content %}
 	<section 
-    {% if post.meta('main_background_image') -%} 
-      style="background-image: url('{{ get_image(post.meta('main_background_image')).src }}');" 
-    {% else %} 
-      style="background-image: url('{{ theme.link }}/assets/img/hp-hero-bg.svg');" 
-    {% endif %} 
+    style="background-image: url('{{ theme.link }}/assets/img/hp-hero.svg');" 
     class="lfl-hp-hero lfl-section pb-6">
       <div class="lfl-hp-hero__intro-panel text-white">
         <div class="lfl-heading-s xs:lfl-heading-m sm:lfl-heading-l pb-12">{{post.meta('subtitle')}}</div>
@@ -23,13 +19,13 @@
           <img class="block" src="{{get_image(post.meta('quote_block').image).src}}" alt="{{get_image(post.meta('quote_block').image).alt|default(get_image(post.meta('quote_block').image).title)}}"/>
         </div>
         <div>
-          <div class="lfl-hp-quote__quote mb-4">
+          <div class="lfl-hp-quote__quote">
             &ldquo;{{post.meta('quote_block').quote}}&rdquo;
           </div>
           <div class="lfl-hp-quote__name mb-6">
             {{post.meta('quote_block').name}}
           </div>
-          <a href="{{post.meta('quote_block').link}}" class="lfl-link-button">Learn more</a>
+          <a href="{{post.meta('quote_block').link}}" class="lfl-link-button mb-0">Learn more</a>
         </div>
       </div>
       <hr class="lfl-page-break w-1/2 mx-auto">
@@ -47,7 +43,7 @@
               </div>
               <h3 class="lfl-hp-wwd__title mb-auto pb-6">{{ item.post_title }}</h3>
               <div class="lfl-hp-wwd__link">
-                <a href="" class="lfl-link-button">Learn more
+                <a href="{{post.meta('what_we_do_link')}}#wwd-{{item.ID}}" class="lfl-link-button">Learn more
                   <span class="sr-only">about
                     {{ item.post_title }}</span>
                 </a>

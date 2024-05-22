@@ -23,7 +23,7 @@
     <section class="lfl-section pt-12">
       <div class="lfl-wwd-container">
       {% for item in post.meta('wwd_blocks') %}
-        <article class="lfl-wwd">
+        <article id="wwd-{{item.ID}}" class="lfl-wwd">
           <div class="mb-6">
             <img class="object-fill max-w-[100px] max-h-[100px]" src="{{ get_image(item.wwd_icon).src }}" aria-hidden="true"/>
           </div>
