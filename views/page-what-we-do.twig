@@ -2,11 +2,17 @@
 
 {% block content %}
   <div class="bg-white pb-12">
-  <section class="lfl-section pt-12">
-    <div class="lfl-page-hero lfl-page-hero--about-us xl:min-h-[430px]">
-      {% include "partial/page-hero.twig" %}
-    </div>
-    <hr class="mt-10 md:mt-16 md:mb-4 lfl-page-break">
-  </section>  
+    <section class="lfl-section pt-12">
+    
+      <div class="lfl-page-hero{% if post.meta('switch_hero_image') %} lfl-page-hero--right {% endif %}xl:min-h-[430px]">
+        <div class="lfl-page-hero__content">
+          {% include "partial/page-hero.twig" %}
+        </div>
+        <div class="lfl-page-hero__image" aria-hidden="true">
+          <img src="{{get_image(post.meta('hero_image')).src}}" alt="{{get_image(post.meta('hero_image').image).alt|default(get_image(post.meta('hero_image')).title)}}" />
+        </div>
+      </div>
+      <hr class="mt-10 md:mt-16 md:mb-4 lfl-page-break">
+    </section>   
   </div>
 {% endblock %}

@@ -140,19 +140,30 @@
    * Page hero
    */
   .lfl-page-hero {
-    @apply md:w-1/2;
-    @apply relative;
+    @apply relative md:flex;
   }
-  .lfl-page-hero p:last-child {
-    @apply mb-0;
+
+  .lfl-page-hero--right {
+    @apply flex-row-reverse gap-8;
   }
   
-  .lfl-page-hero.lfl-page-hero--about-us:after {
-    content: "";
-    background-image: url('../img/about-page-hero.png');
-    @apply bg-no-repeat bg-contain bg-center;
-    @apply w-[97%] h-60 md:h-[460px];
-    @apply block md:absolute top-0 -right-full;
+  .lfl-page-hero__content p:last-child {
+    @apply mb-0;
+  }
+
+  .lfl-page-hero__image img {
+    @apply mx-auto;
+  }
+  
+  .lfl-page-hero__content {
+    @apply flex-[1_0_50%];
+  }
+  .lfl-page-hero__image {
+    @apply flex-[1_0_50%];
+  }
+
+  .lfl-page-hero__image {
+    @apply md:mt-12;
   }
 
   /*
