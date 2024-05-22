@@ -47,9 +47,9 @@
     @apply absolute right-4 top-4;
   }
   
-  .logged-in.admin-bar .lfl-nav-mobile__open {
+  /* .logged-in.admin-bar .lfl-nav-mobile__open {
     top: calc(1rem + 46px);
-  }
+  } */
 
   .lfl-nav-overlay__close {
     @apply absolute right-4 mt-4;
@@ -372,7 +372,7 @@
   }
 
   .lfl-logo--header {
-    @apply relative md:-left-6;
+    @apply relative md:-left-6 px-3 sm:px-0;
   }
 
 
