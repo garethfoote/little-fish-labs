@@ -163,7 +163,7 @@
   }
 
   .lfl-page-hero__image {
-    @apply md:mt-12;
+    @apply md:relative top-6;
   }
 
   /*

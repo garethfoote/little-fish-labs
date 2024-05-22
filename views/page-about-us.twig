@@ -7,7 +7,7 @@
         <div class="lfl-page-hero__content">
           {% include "partial/page-hero.twig" %}
         </div>
-        <div class="md:mt-12" aria-hidden="true">
+        <div class="lfl-page-hero__image" aria-hidden="true">
           <img src="{{get_image(post.meta('hero_image')).src}}" alt="{{get_image(post.meta('hero_image').image).alt|default(get_image(post.meta('hero_image')).title)}}" />
         </div>
       </div>
