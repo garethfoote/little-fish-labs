@@ -114,9 +114,11 @@
     fill: #1301E8
   }
 
+  .lfl-icon:focus,
   .lfl-icon:hover {
     @apply bg-blue border-2 border-white;
   }
+  .lfl-icon:focus svg,
   .lfl-icon:hover svg {
     fill: white;
   }
