@@ -8,7 +8,3 @@
 {% if not post.meta("page_introduction") == "" %}
 <div class="max-w-prose mt-4 md:mt-8">{{post.meta("page_introduction")}}</div>
 {% endif %}
-{% if not post.meta('large_quote')|trim == "" %}
-<p class="lfl-heading-s sm:lfl-heading-m text-blue pb-4 mt-6 md:mt-12">&ldquo;{{post.meta('large_quote')}}&rdquo;</h2>
-{% endif %}
-

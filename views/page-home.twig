@@ -16,16 +16,16 @@
 	  <div class="lfl-section md:h-72">
       <div class="lfl-hp-quote py-12">
         <div class="lfl-hp-quote__image">
-          <img class="block" src="{{get_image(post.meta('quote_block').image).src}}" alt="{{get_image(post.meta('quote_block').image).alt|default(get_image(post.meta('quote_block').image).title)}}"/>
+          <img class="block" src="{{get_image(post.meta('homepage_quote').image).src}}" alt="{{get_image(post.meta('homepage_quote').image).alt|default(get_image(post.meta('homepage_quote').image).title)}}"/>
         </div>
         <div>
           <div class="lfl-hp-quote__quote">
-            &ldquo;{{post.meta('quote_block').quote}}&rdquo;
+            &ldquo;{{post.meta('homepage_quote').quote}}&rdquo;
           </div>
           <div class="lfl-hp-quote__name mb-6">
-            {{post.meta('quote_block').name}}
+            {{post.meta('homepage_quote').name}}
           </div>
-          <a href="{{post.meta('quote_block').link}}" class="lfl-link-button mb-0">Learn more</a>
+          <a href="{{post.meta('homepage_quote').link}}" class="lfl-link-button mb-0">Learn more</a>
         </div>
       </div>
       <hr class="lfl-page-break w-2/3 sm:w-1/2 mx-auto">
@@ -94,7 +94,7 @@
             <li class="glide__slide">
               <article class="lfl-hp-team-member">
                 <div class="lfl-hp-team-member__image">
-                  <img src="{{get_image(team_member.meta('member_image')).src}}" alt="Piciture of {{team_member.title}}" />
+                  <img src="{{get_image(team_member.meta('images').home_page).src}}" alt="Piciture of {{team_member.title}}" />
                 </div>
                 <div class="lfl-hp-team-member__content">
                   <h3 class="lfl-hp-team-member__title">{{team_member.title}}</h3>

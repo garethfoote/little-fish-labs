@@ -6,6 +6,9 @@
       <div class="lfl-page-hero xl:min-h-[430px]">
         <div class="lfl-page-hero__content">
           {% include "partial/page-hero.twig" %}
+          {% if not post.meta('large_quote')|trim == "" %}
+          <p class="lfl-heading-s sm:lfl-heading-m text-blue pb-4 mt-6 md:mt-12">&ldquo;{{post.meta('large_quote')}}&rdquo;</h2>
+          {% endif %}
         </div>
         <div class="lfl-page-hero__image" aria-hidden="true">
           <img src="{{get_image(post.meta('hero_image')).src}}" alt="{{get_image(post.meta('hero_image').image).alt|default(get_image(post.meta('hero_image')).title)}}" />
