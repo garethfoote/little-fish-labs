@@ -17,7 +17,7 @@
     <section class="lfl-section pt-12">
       <h2 class="eyebrow md:float-right w-1/2">Our team</h2>
     {% for team_member in get_posts(post.meta('team_members')) %}
-      <article id="team-member-{{team_member.id}}" class="lfl-about-team-member">
+      <article id="tm-{{team_member.id}}" class="lfl-about-team-member">
         <div class="lfl-about-team-member__image">
           <img src="{{get_image(team_member.meta('images').about_page).src}}" alt="Picture of {{team_member.title}}" />
         </div>

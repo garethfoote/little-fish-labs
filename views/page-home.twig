@@ -6,7 +6,7 @@
     class="lfl-hp-hero lfl-section pb-6">
       <div class="lfl-hp-hero__intro-panel text-white">
         <div class="lfl-heading-s xs:lfl-heading-m sm:lfl-heading-l pb-12">{{post.meta('subtitle')}}</div>
-        <a href="{{post.meta('learn_more_link')}}" class="lfl-link-button lfl-link-button--lg lfl-link-button--light">Learn more
+        <a href="{{post.meta('learn_more_link')}}" class="lfl-link-button lfl-link-button--lg lfl-link-button--white-solid">Learn more
           <span class="sr-only">about Little Fish Labs</span>
         </a>
 		</div>
@@ -71,7 +71,7 @@
             <div>
               {{brand.meta('brand_description')}}
             </div>
-            <a href="{{post.meta('our_brands_page')|default("/our-brands")}}#brand-{{brand.id}}" class="lfl-link-button mb-0">Learn more
+            <a href="{{post.meta('our_brands_page')|default("/our-brands")}}#brand-{{brand.id}}" class="lfl-link-button lfl-link-button--white mb-0">Learn more
               <span class="sr-only">about {{brand.title}}</span>
             </a>
           </div>
@@ -100,7 +100,7 @@
                   <h3 class="lfl-hp-team-member__title">{{team_member.title}}</h3>
                   <p class="lfl-hp-team-member__role">{{team_member.role}}</p>
                   <p class="mb-4 min-h-[7.5rem]">{{team_member.short_bio|default(team_member.member_bio)|excerpt(30)}}</p>
-                  <a class="lfl-link-button" href="">Learn more<span class="sr-only">about {{team_member.title}}</span></a>
+                  <a class="lfl-link-button" href="{{post.meta('meet_the_team_page')}}#tm-{{team_member.id}}">Learn more<span class="sr-only">about {{team_member.title}}</span></a>
                 </div>
               </article>
             </li>

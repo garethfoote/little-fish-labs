@@ -296,7 +296,7 @@
 
   .lfl-hp-brand {
     @apply grid sm:flex sm:gap-8 p-4 xs:p-8;
-    @apply bg-gray-100 rounded-lg;
+    @apply bg-blue text-white rounded-lg;
   }
   
   .lfl-hp-brand__image {
@@ -452,12 +452,22 @@
    @apply text-base px-12;
   }
 
-  .lfl-link-button--light {
+  .lfl-link-button--white-solid {
+    @apply text-center text-blue bg-white;
+    @apply border-white;
+  }
+
+  .lfl-link-button--white-solid:hover {
+    @apply bg-transparent text-white;
+    @apply relative;
+  }
+  
+  .lfl-link-button--white {
     @apply text-center text-white bg-transparent;
     @apply border-white;
   }
 
-  .lfl-link-button--light:hover {
+  .lfl-link-button--white:hover {
     @apply bg-white text-blue-700;
     @apply relative;
   }
