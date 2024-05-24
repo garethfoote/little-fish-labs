@@ -4,7 +4,7 @@
    * Callout
    */
   .lfl-callout {
-    @apply font-extended text-2xl bg-blue text-white text-center p-12 rounded-xl;
+    @apply font-extended text-lg sm:text-2xl bg-blue text-white text-center p-6 sm:p-12 rounded-xl;
   }
   
   /*
@@ -83,7 +83,7 @@
   }
 
   .lfl-brand-product {
-    @apply p-6;
+    @apply p-4 sm:p-6;
     @apply bg-gray-100 rounded-lg overflow-hidden;
   }
 

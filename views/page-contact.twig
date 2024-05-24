@@ -20,7 +20,7 @@
       <div class="lfl-contact mb-12 lg:mb-0">
         <img src="{{get_image(contact.icon).src}}" alt="{{get_image(contact.icon).alt|default(get_image(contact.icon).title)}}" />
         <p class="text-white mb-1 pb-0">{{contact.description}}</p>
-        <a class="text-white text-xl md:text-2xl" href="mailto:{{contact.contact_email}}">{{contact.contact_email}}</a>
+        <a class="text-white text-[1.375rem] sm:text-xl md:text-2xl" href="mailto:{{contact.contact_email}}">{{contact.contact_email}}</a>
       </div>
     {% endfor %}
     </div>
