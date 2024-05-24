@@ -276,7 +276,7 @@
   }
   .lfl-hp-team-member__content {
     flex: 2;
-    @apply p-4 xs:p-6 sm:p-8;
+    @apply flex flex-col p-4 xs:p-6 sm:p-8;
   }
   .lfl-hp-team-member__title {
     @apply mb-0;
@@ -285,6 +285,13 @@
   .lfl-hp-team-member__role {
     @apply mb-6;
     @apply font-extended text-md text-black font-normal;
+  }
+  
+  .lfl-hp-team-member__description {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    @apply mb-auto overflow-hidden;
   }
 
   /*

@@ -5,7 +5,7 @@ const initGlide = (el) => {
     perView: 2,
     focusAt: 'center',
     breakpoints: {
-      1280: {
+      1024: {
         perView: 1
       }
     }
