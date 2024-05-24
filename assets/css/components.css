@@ -382,6 +382,10 @@
     @apply relative md:-left-6 px-3 sm:px-0;
   }
 
+  .lfl-logo--footer {
+    @apply max-w-48 sm:max-w-64;
+  }
+
 
   /*
    * Homepage Quote Block
@@ -417,6 +421,7 @@
   @media screen(sm) {
     .lfl-hp-wwd-container {
       @apply grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-6 xl:gap-12;
+      /* grid-template-columns: repeat(4, minmax(0, 1fr)); */
     }
   }
 

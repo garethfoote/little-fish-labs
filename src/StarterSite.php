@@ -11,6 +11,7 @@ class StarterSite extends Site {
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
     add_filter( 'wp_enqueue_scripts', array( $this, 'lfl_remove_jquery') );
+    add_action('admin_head', array( $this, 'lfl_admin_custom_css'));
 
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
@@ -29,6 +30,22 @@ class StarterSite extends Site {
 		parent::__construct();
 	}
 
+	/**
+	 * Adding custom css to admin
+   * - hide View 'Post' 
+	 */
+  public function lfl_admin_custom_css() {
+    $post_types = array("lfl_wwd", "lfl_team", "lfl_brands");
+    global $post;
+    // print_r($post->post_type); exit();
+    if($post && in_array($post->post_type, $post_types)){
+      echo '<style>
+        #wp-admin-bar-view {
+          display: none;
+        }
+      </style>';
+    }
+  }
 	/**
 	 * Remove jQuery
 	 */

@@ -14,13 +14,12 @@
 
 <section class="lfl-section py-12">
 
-    <div class="lfl-contact-container flex flex-col lg:flex-row gap-12 justify-around">
+    <div class="lfl-contact-container flex flex-col lg:flex-row gap-12 justify-between xl:justify-between">
     {% for contact in post.meta('contacts') %}
-      {# {{dump(contact)}} #}
       <div class="lfl-contact mb-12 lg:mb-0">
-        <img src="{{get_image(contact.icon).src}}" alt="{{get_image(contact.icon).alt|default(get_image(contact.icon).title)}}" />
+        <img class="max-w-32" src="{{get_image(contact.icon).src}}" alt="{{get_image(contact.icon).alt|default(get_image(contact.icon).title)}}" />
         <p class="text-white mb-1 pb-0">{{contact.description}}</p>
-        <a class="text-white text-[1.375rem] sm:text-xl md:text-2xl" href="mailto:{{contact.contact_email}}">{{contact.contact_email}}</a>
+        <a class="text-white text-[1.375rem] sm:text-2xl xl:text-3xl" href="mailto:{{contact.contact_email}}">{{contact.contact_email}}</a>
       </div>
     {% endfor %}
     </div>
