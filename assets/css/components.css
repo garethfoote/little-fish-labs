@@ -270,16 +270,19 @@
   .lfl-hp-team-member__image img {
     @apply object-cover w-full h-[500px] sm:h-full;
   }
+
   .lfl-hp-team-member__content {
     flex: 2;
     @apply flex flex-col p-4 xs:p-6 sm:p-8;
   }
+
   .lfl-hp-team-member__title {
     @apply mb-0;
     @apply font-extended font-light text-lg text-blue-600;
   }
+
   .lfl-hp-team-member__role {
-    @apply mb-6;
+    @apply mb-6 min-h-12;
     @apply font-extended text-md text-black font-normal;
   }
   
@@ -288,6 +291,10 @@
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     @apply mb-auto overflow-hidden;
+  }
+  
+  .lfl-hp-team-member .lfl-link-button {
+    @apply mt-4;
   }
 
   /*
