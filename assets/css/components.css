@@ -168,14 +168,10 @@
   .lfl-page-hero--right {
     @apply flex-row-reverse gap-8;
   }
-  .lfl-page-hero__content--overlay {
-    @apply relative z-10 bg-blue/[.70];
+  .lfl-page-hero__content--overlay .max-w-prose {
+    @apply relative z-10 bg-blue/[.70] rounded-lg;
   }
-  @media screen(md) {
-    .lfl-page-hero__content--overlay {
-      @apply bg-transparent;
-    }
-  }
+
   .lfl-page-hero__content p:last-child {
     @apply mb-0;
   }
