@@ -3,6 +3,7 @@ import Glide from '@glidejs/glide'
 const initGlide = (el) => {
   new Glide(el, {
     perView: 2,
+    startAt: 3,
     focusAt: 'center',
     breakpoints: {
       1024: {

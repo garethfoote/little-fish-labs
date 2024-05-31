@@ -261,7 +261,7 @@
     @apply sm:flex sm:gap-8 items-stretch;
     @apply bg-gray-100 rounded-lg overflow-hidden;
     @apply border border-blue-400;
-    @apply h-auto sm:h-80;
+    @apply h-auto sm:h-96;
   }
   .lfl-hp-team-member__image {
     flex: 0 1 33%;
@@ -288,7 +288,7 @@
   
   .lfl-hp-team-member__description {
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp:6;
     -webkit-box-orient: vertical;
     @apply mb-auto overflow-hidden;
   }

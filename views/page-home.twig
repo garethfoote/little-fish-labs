@@ -99,7 +99,7 @@
                 <div class="lfl-hp-team-member__content">
                   <h3 class="lfl-hp-team-member__title">{{team_member.title}}</h3>
                   <p class="lfl-hp-team-member__role">{{team_member.role}}</p>
-                  <p class="lfl-hp-team-member__description">{{team_member.short_bio|default(team_member.member_bio)|excerpt(30)}}</p>
+                  <p class="lfl-hp-team-member__description">{{team_member.short_bio|default(team_member.member_bio)}}</p>
                   <a class="lfl-link-button mb-0" href="{{post.meta('meet_the_team_page')}}#tm-{{team_member.id}}">Learn more<span class="sr-only">about {{team_member.title}}</span></a>
                 </div>
               </article>
