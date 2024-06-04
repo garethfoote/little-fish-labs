@@ -16,7 +16,7 @@
 	  <div class="lfl-section md:h-72">
       <div class="lfl-hp-quote py-12">
         <div class="lfl-hp-quote__image">
-          <img class="block" src="{{get_image(post.meta('homepage_quote').image).src}}" alt="{{get_image(post.meta('homepage_quote').image).alt|default(get_image(post.meta('homepage_quote').image).title)}}"/>
+          <img class="block" src="{{get_image(post.meta('homepage_quote').image).src | resize(320, 0, 'center')}}" alt="{{get_image(post.meta('homepage_quote').image).alt|default(get_image(post.meta('homepage_quote').image).title)}}"/>
         </div>
         <div>
           <div class="lfl-hp-quote__quote">

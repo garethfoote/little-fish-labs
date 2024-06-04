@@ -11,7 +11,7 @@
           {% endif %}
         </div>
         <div class="lfl-page-hero__image" aria-hidden="true">
-          <img src="{{get_image(post.meta('hero_image')).src}}" alt="{{get_image(post.meta('hero_image').image).alt|default(get_image(post.meta('hero_image')).title)}}" />
+          <img src="{{get_image(post.meta('hero_image')).src | resize(1000, 0, 'center')}}" alt="{{get_image(post.meta('hero_image').image).alt|default(get_image(post.meta('hero_image')).title)}}" />
         </div>
       </div>
       <hr class="mt-10 md:mt-16 md:mb-4 lfl-page-break">
@@ -22,7 +22,9 @@
     {% for team_member in get_posts(post.meta('team_members')) %}
       <article id="tm-{{team_member.id}}" class="lfl-about-team-member">
         <div class="lfl-about-team-member__image">
-          <img src="{{get_image(team_member.meta('images').about_page).src}}" alt="Picture of {{team_member.title}}" />
+          <img src="{{get_image(team_member.meta('images').about_page).src | resize(750, 0, 'center') }}" alt="Picture of {{team_member.title}}" />
+
+          
         </div>
         <div class="lfl-about-team-member__content flex-1">
           <h3 class="lfl-about-team-member__title">{{team_member.title}}</h3>

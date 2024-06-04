@@ -143,7 +143,7 @@
   }
   
   .lfl-about-team-member__image img {
-    @apply mx-auto;
+    @apply mx-auto max-h-112;
   }
 
   .lfl-about-team-member__content {

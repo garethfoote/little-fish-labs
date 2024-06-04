@@ -41,7 +41,11 @@ module.exports = {
       },
       borderRadius: {
         'xl': '1rem',
-      }
+      },
+      maxHeight: {
+        '112' : '28rem',
+        '128': '32rem',
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
