@@ -27,8 +27,28 @@ class StarterSite extends Site {
 
 		add_filter( 'acf/get_valid_field', array( $this,'lfl_change_post_content_type'));
 
+    add_action('admin_enqueue_scripts', array($this, 'lfl_custom_change_title_placeholder'));
+
 		parent::__construct();
 	}
+
+	/**
+	 * Adding custom css to admin
+   * - hide View 'Post' 
+	 */
+  public function lfl_custom_change_title_placeholder() {
+    $post_types = array("lfl_wwd", "lfl_team", "lfl_brands");
+    global $typenow;
+    if(in_array($typenow, $post_types)){
+        wp_enqueue_script(
+            'lfl-custom-change-title-placeholder',
+            get_template_directory_uri() . '/public/admin/post-title-placeholder.js',
+            array('jquery'),
+            '1.0',
+            true
+        );
+    }
+}
 
 	/**
 	 * Adding custom css to admin
