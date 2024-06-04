@@ -33,6 +33,13 @@
     @apply bg-blue;
   }
 
+  @media screen(max-sm) {
+    .lfl-nav-overlay__close.lfl-icon,
+    .lfl-nav-mobile__open.lfl-icon {
+      @apply w-9 h-9;
+    }
+  }
+
   .lfl-nav-overlay__close svg,
   .lfl-nav-mobile__open svg {
     @apply stroke-blue;
@@ -275,12 +282,13 @@
     flex: 2;
     @apply flex flex-col p-4 xs:p-6 sm:p-8;
   }
-
+  
+  
   .lfl-hp-team-member__title {
     @apply mb-0;
     @apply font-extended font-light text-lg text-blue-600;
   }
-
+  
   .lfl-hp-team-member__role {
     @apply mb-6 min-h-12;
     @apply font-extended text-md text-black font-normal;
@@ -294,7 +302,7 @@
   }
   
   .lfl-hp-team-member .lfl-link-button {
-    @apply mt-4;
+    @apply mt-4 w-fit;
   }
 
   /*
@@ -457,10 +465,14 @@
     @apply whitespace-nowrap;
     @apply text-sm text-center text-blue-700;
     @apply inline-block py-1 px-8;
-    @apply border border-blue rounded-full bg-white;
+    @apply border border-blue rounded-full;
+    background: linear-gradient(315deg, theme('colors.white') 50%, theme('colors.blue') 50%) right;
+    background-size: 300% 150%;
+    transition: .5s ease-out;
   }
   .lfl-link-button:hover {
     @apply bg-blue text-white;
+    background-position: left;
   } 
   
   .lfl-link-button--lg {
@@ -479,6 +491,8 @@
   
   .lfl-link-button--white {
     @apply text-center text-white bg-transparent;
+    background: linear-gradient(315deg, transparent 50%, theme('colors.white') 50%) right;
+    background-size: 300% 150%;
     @apply border-white;
   }
 

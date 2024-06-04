@@ -14,7 +14,7 @@ export default ({ mode }) => {
 		build: {
 			outDir: 'public',
 			assetsDir: '.',
-			emptyOutDir: true,
+			emptyOutDir: false,
 			copyPublicDir: false,
 			manifest: true,
 			rollupOptions: {
