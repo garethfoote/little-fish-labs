@@ -1,9 +1,10 @@
 import Glide from '@glidejs/glide'
 
-const initGlide = (el) => {
+const initGlide = (el, startAt) => {
   new Glide(el, {
+    type:"carousel",
     perView: 2,
-    startAt: 3,
+    startAt: startAt ?? 1,
     focusAt: 'center',
     breakpoints: {
       1024: {
@@ -84,9 +85,17 @@ function scrollTo(element, offset = 0, duration = 800) {
 
 document.addEventListener("DOMContentLoaded", (event) => {
   // Init glide carousel, if element is present
+  const items = document.querySelectorAll('.lfl-hp-team-member__title');
   const glideEl = document.querySelector('.glide')
+  let startAt = 0;
+  Array.from(items).findIndex((el, i)=>{
+    if(el.textContent.toLowerCase().indexOf("jade") >= 0){
+      startAt = i;
+    }
+  })
+  
   if(glideEl){
-    initGlide(glideEl);
+    initGlide(glideEl, startAt);
   }
 
   // Init mobile nav
