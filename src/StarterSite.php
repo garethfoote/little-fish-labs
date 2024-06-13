@@ -109,12 +109,12 @@ class StarterSite extends Site {
       'separator1', // First separator
       'edit.php', // Posts
       'edit.php?post_type=page', // Pages
+      'separator2', // Second separator
       'edit.php?post_type=lfl_brands', // Brands
       'edit.php?post_type=lfl_team', // Team
       'edit.php?post_type=lfl_wwd', // What we do
-      'separator2', // Second separator
-      'upload.php', // Media
       'separator-last', // Last separator
+      'upload.php', // Media
       'themes.php', // Appearance
       'plugins.php', // Plugins
       'users.php', // Users
