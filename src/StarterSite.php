@@ -10,9 +10,11 @@ class StarterSite extends Site {
 		add_action( 'after_setup_theme', array( $this, 'theme_supports' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
+		add_action( 'init', array( $this, 'lfl_add_custom_capabilities' ) );
     add_filter( 'wp_enqueue_scripts', array( $this, 'lfl_remove_jquery') );
     add_action('admin_head', array( $this, 'lfl_admin_custom_css'));
-
+    add_action('admin_menu', array( $this, 'lfl_remove_appearance_submenus'), 9999);
+    
 		add_filter( 'timber/context', array( $this, 'add_to_context' ) );
 		add_filter( 'timber/twig', array( $this, 'add_to_twig' ) );
 		add_filter( 'timber/twig/environment/options', [ $this, 'update_twig_environment_options' ] );
@@ -31,6 +33,32 @@ class StarterSite extends Site {
 
 		parent::__construct();
 	}
+
+  public function lfl_remove_appearance_submenus() {
+    if (current_user_can('editor')) {
+      // Remove Customize submenu
+      remove_submenu_page('themes.php', 'customize.php');
+      
+      // Remove Themes submenu
+      // remove_submenu_page('themes.php', 'themes.php');
+      
+      // Remove Patterns submenu
+      remove_submenu_page('themes.php', 'edit.php?post_type=wp_block');
+    }
+  }
+
+	/**
+	 * Adding custom capabilities to editor role
+	 */
+  public function lfl_add_custom_capabilities() {
+    // Get the role object
+    $role = get_role( 'editor' ); // or use 'administrator' or any other role
+
+    // Add desired capabilities
+    $role->add_cap( 'edit_theme_options' ); // Required for managing menus
+    $role->add_cap( 'manage_nav_menus' ); // Allows managing navigation menus
+    $role->remove_cap('customize');
+}
 
 	/**
 	 * Adding custom css to admin
@@ -63,6 +91,15 @@ class StarterSite extends Site {
         #wp-admin-bar-view {
           display: none;
         }
+        .row-actions .inline { display: none; }
+      </style>';
+    }
+
+    if (current_user_can('editor')) {
+      echo '<style type="text/css">
+          /* Hide Customize menu item */
+          li.hide-if-no-customize { display: none !important; }
+          .theme-browser .active-theme { display: none !important; }
       </style>';
     }
   }
@@ -162,6 +199,7 @@ class StarterSite extends Site {
 					'new_item' => 'New Brand',
 				),
 				'public'      => true,
+        'publicly_queryable' => false,
 				'has_archive' => false,
 				'menu_icon' => 'dashicons-carrot',
 				'supports' => array('title')
@@ -181,6 +219,7 @@ class StarterSite extends Site {
 					'new_item' => 'New Member',
 				),
 				'public'      => true,
+        'publicly_queryable' => false,
 				'has_archive' => false,
 				'menu_icon' => 'dashicons-smiley',
 				'supports' => array('title')
@@ -200,6 +239,7 @@ class StarterSite extends Site {
           'new_item' => 'New What We Do item',
         ),
         'public'      => true,
+        'publicly_queryable' => false,
         'has_archive' => false,
         'menu_icon' => 'dashicons-hammer',
         'supports' => array('title')
