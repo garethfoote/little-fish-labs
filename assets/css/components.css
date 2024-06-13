@@ -275,14 +275,20 @@
   }
 
   .lfl-hp-team-member__image img {
-    @apply object-cover w-full h-[500px] sm:h-full;
+    height: calc(250px + 30vw);
+    @apply object-cover w-full ;
+  }
+
+  @media screen(xs) {
+    .lfl-hp-team-member__image img {
+      height: calc(350px + 30vw);
+    }
   }
 
   .lfl-hp-team-member__content {
     flex: 2;
     @apply flex flex-col p-4 xs:p-6 sm:p-8;
   }
-  
   
   .lfl-hp-team-member__title {
     @apply mb-0;

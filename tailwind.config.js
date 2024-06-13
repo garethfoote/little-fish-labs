@@ -11,6 +11,7 @@ module.exports = {
     },
     screens: {
       wp_admin: "782px",
+      xs: "440px",
       sm: "640px",
       md: "768px",
       lg: "1024px",
@@ -36,9 +37,6 @@ module.exports = {
         "blue-700": "#050577",
         black: "#000",
         "gray-dark": "#4D5149"
-      },
-      screens: {
-        'xs': '512px'
       },
       borderRadius: {
         'xl': '1rem',

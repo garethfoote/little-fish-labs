@@ -22,6 +22,7 @@
     "vite": "^4.3.1"
   },
   "dependencies": {
-    "@glidejs/glide": "^3.6.0"
+    "@glidejs/glide": "^3.6.0",
+    "@nationalarchives/tdr-components": "^1.0.39"
   }
 }
