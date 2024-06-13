@@ -1,22 +1,24 @@
-{% extends "base.twig" %}
+{% extends "base-white.twig" %}
 
 {% block content %}
 
   <div class="bg-white pb-12">
-	  <section class="lfl-section pt-12">
-      <div class="lfl-page-hero{% if template %} lfl-page-hero--{{template}}{%endif%}">
-        <h1>
-          <div class="eyebrow mb-0">{{post.title}}</div>
-          {% if not post.meta('subtitle') == "" %}
-          <div class="lfl-heading-s xs:lfl-heading-m sm:lfl-heading-l text-blue-600 mb-8">{{post.meta('subtitle')}}</div>
-          {% endif %}
-        </h1>
-        <div class="max-w-prose mb-12">{{post.meta('content')|default(post.content)}}</div>
-        {% if not post.meta('large_quote')|trim == "" %}
-        <p class="lfl-heading-s xs:lfl-heading-m sm:lfl-heading-l text-blue">&ldquo;{{post.meta('large_quote')}}&rdquo;</h2>
-        {% endif %}
+    <section class="lfl-section pt-12">
+    
+      <div class="lfl-page-hero{% if post.meta('switch_hero_image') %} lfl-page-hero--right {% endif %} xl:min-h-[430px]">
+        <div class="lfl-page-hero__content">
+          {% include "partial/page-hero.twig" %}
+        </div>
+        <div class="lfl-page-hero__image" aria-hidden="true">
+          <img src="{{get_image(post.meta('hero_image')).src}}" alt="{{get_image(post.meta('hero_image').image).alt|default(get_image(post.meta('hero_image')).title)}}" />
+        </div>
       </div>
-      {# <hr class="mt-10 md:mt-16 md:mb-4 lfl-page-break"> #}
-    </section>  
+    </section>   
+
+    <section class="bg-white py-12">
+      <div class="lfl-content lfl-section">
+      {{post.content}}
+      </div>
+    </section>
   </div>
 {% endblock %}
