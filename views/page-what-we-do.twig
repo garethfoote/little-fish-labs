@@ -9,7 +9,7 @@
           {% include "partial/page-hero.twig" %}
         </div>
         <div class="lfl-page-hero__image" aria-hidden="true">
-          <img src="{{get_image(post.meta('hero_image')).src}}" alt="{{get_image(post.meta('hero_image').image).alt|default(get_image(post.meta('hero_image')).title)}}" />
+          <img src="{{get_image(post.meta('hero_image')).src | resize(0, 900, 'center')}}" alt="{{get_image(post.meta('hero_image').image).alt|default(get_image(post.meta('hero_image')).title)}}" />
         </div>
       </div>
     </section>   
