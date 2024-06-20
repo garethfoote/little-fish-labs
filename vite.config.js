@@ -12,9 +12,9 @@ export default ({ mode }) => {
 			open: process.env.VITE_SITE_URL,
 		},
 		build: {
-			outDir: 'public',
+			outDir: 'public/dist',
 			assetsDir: '.',
-			emptyOutDir: false,
+			emptyOutDir: true,
 			copyPublicDir: false,
 			manifest: true,
 			rollupOptions: {
