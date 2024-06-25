@@ -35,9 +35,22 @@
     max-width: 80ch;
     @apply mb-4;
   }
+
+  .lfl-content h6,
+  .lfl-content h5,
+  .lfl-content h4,
+  .lfl-content h3,
+  .lfl-content h2,
+  .lfl-content h1 {
+    @apply text-md font-sans mb-0 text-blue-700;
+  }
   
   .lfl-content ul {
     @apply pl-4 mb-4;
+  }
+
+  .lfl-content li::marker {
+    color: theme(colors.blue-700);
   }
 
   .lfl-content li {

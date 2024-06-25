@@ -27,8 +27,6 @@ class StarterSite extends Site {
 		add_filter( 'custom_menu_order', array( $this,'lfl_custom_menu_order') );
 		add_filter( 'menu_order', array( $this,'lfl_custom_menu_order') );
 
-		add_filter( 'acf/get_valid_field', array( $this,'lfl_change_post_content_type'));
-
     add_action('admin_enqueue_scripts', array($this, 'lfl_custom_change_title_placeholder'));
 
 		parent::__construct();
@@ -111,18 +109,6 @@ class StarterSite extends Site {
       wp_dequeue_script( 'jquery');
       wp_deregister_script( 'jquery'); 
     }
-  }
-
-	/**
-	 * Remove 'Add Media' from ACF wysiwyg field
-	 */
-  public function lfl_change_post_content_type( $field ) { 
-    if($field['type'] == 'wysiwyg') {
-      $field['tabs'] = 'visual';
-      $field['toolbar'] = 'basic';
-      $field['media_upload'] = 0;
-    }
-    return $field;
   }
 
 	/**
